@@ -1009,9 +1009,16 @@ body::-webkit-scrollbar {
         width: 160px;
     }
 
+    /* Tekst niżej pod tagiem, nie nachodzi */
+    .hero-brand {
+        transform: translateY(6px);
+        gap: 4px;
+    }
+
     .hero-brand .brand-name,
     .hero-brand .brand-sub {
         font-size: 6.5pt;
+        transform: none;
     }
 
     /* Przełącznik języka — mniejszy */
@@ -1073,6 +1080,12 @@ body::-webkit-scrollbar {
         letter-spacing: 1px;
     }
 
+    /* Amatuszczak w manifesto — ten sam rozmiar co Projects */
+    .brand-name-top {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
     /* ── PROJECT SECTION 1 — Hundred Bears ── */
     .project-section-1 {
         margin-top: 40px;
@@ -1083,9 +1096,22 @@ body::-webkit-scrollbar {
         gap: 24px;
     }
 
-    /* Logo Hundred Bears — większe żeby było widoczne */
+    /* Logo Hundred Bears — nad opisem, wyraźnie widoczne */
+    .s1-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-col {
+        width: 100%;
+    }
+
     .project-logo {
-        max-width: 160px;
+        max-width: 180px;
+    }
+
+    .desc-col {
+        margin-left: 0;
     }
 
     /* Ukryj drugie zdjęcie (img-2), zostaw tylko pierwsze */
@@ -1131,61 +1157,5 @@ body::-webkit-scrollbar {
     /* ── FULLWIDTH PHOTO ── */
     .fullwidth-photo-section {
         height: 55vw;
-    }
-
-    /* ── FOOTER ── */
-    .footer {
-        padding: 20px 20px 48px;
-    }
-
-    .footer-top {
-        font-size: 9px;
-        letter-spacing: 1px;
-    }
-
-    .footer-line {
-        margin-top: 16px;
-        margin-bottom: 28px;
-    }
-
-    .footer-title {
-        font-size: clamp(2rem, 10vw, 3rem);
-        margin-bottom: 24px;
-    }
-
-    .contact-row {
-        gap: 12px;
-        margin-bottom: 20px;
-    }
-
-    .contact-row a {
-        font-size: 15px;
-    }
-
-    .footer-socials {
-        gap: 28px;
-        flex-wrap: wrap;
-        margin-top: 32px;
-    }
-
-    .social-group {
-        gap: 10px;
-        min-width: 120px;
-    }
-
-    .social-group a {
-        font-size: 15px;
-    }
-
-    .social-group span {
-        font-size: 9px;
-    }
-
-    .footer-credits {
-        gap: 6px;
-    }
-
-    .footer-photos {
-        font-size: 12px;
     }
 }

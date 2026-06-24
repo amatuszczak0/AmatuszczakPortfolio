@@ -218,14 +218,72 @@
     .footer-line {
         width: calc(100% + 32px);
         margin-left: -16px;
+        margin-top: 12px;
+        margin-bottom: 24px;
     }
 
+    /* Górny pasek — rok po lewej, rola po prawej */
     .footer-top {
-        letter-spacing: 1.5px;
-        font-size: 10px;
+        grid-template-columns: 1fr 1fr;
+        letter-spacing: 1px;
+        font-size: 9px;
     }
 
-    .footer-socials {
+    .footer-role {
+        justify-self: end;
+    }
+
+    /* Główna część — kolumna */
+    .footer-main {
+        flex-direction: column;
         gap: 32px;
+    }
+
+    .footer-title {
+        font-size: clamp(2.2rem, 11vw, 3rem);
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .contact-row a {
+        font-size: 15px;
+    }
+
+    .footer-credits {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .footer-photos {
+        font-size: 12px;
+    }
+
+    /* Sociale — grid 2×2 */
+    .footer-socials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 20px;
+        margin-top: 0;
+        flex-wrap: unset;
+    }
+
+    .social-group {
+        gap: 8px;
+    }
+
+    .social-group a {
+        font-size: 14px;
+    }
+
+    .social-group span {
+        font-size: 9px;
     }
 }
