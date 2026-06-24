@@ -1011,14 +1011,18 @@ body::-webkit-scrollbar {
 
     /* Tekst niżej pod tagiem, nie nachodzi */
     .hero-brand {
-        transform: translateY(6px);
+        transform: translateY(-8px);
         gap: 4px;
     }
 
-    .hero-brand .brand-name,
+    .hero-brand .brand-name {
+        font-size: 6.5pt;
+        transform: translateX(-30px);
+    }
+
     .hero-brand .brand-sub {
         font-size: 6.5pt;
-        transform: none;
+        transform: translateX(30px);
     }
 
     /* Przełącznik języka — mniejszy */
@@ -1076,13 +1080,13 @@ body::-webkit-scrollbar {
     }
 
     .projects-title {
-        font-size: 13px;
+        font-size: 11px;
         letter-spacing: 1px;
     }
 
     /* Amatuszczak w manifesto — ten sam rozmiar co Projects */
     .brand-name-top {
-        font-size: 13px;
+        font-size: 11px;
         letter-spacing: 1px;
     }
 
@@ -1107,7 +1111,7 @@ body::-webkit-scrollbar {
     }
 
     .project-logo {
-        max-width: 180px;
+        max-width: 126px;
     }
 
     .desc-col {
