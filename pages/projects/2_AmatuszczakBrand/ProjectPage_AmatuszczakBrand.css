@@ -1,0 +1,182 @@
+body {
+    padding-top: 100px;
+}
+
+/* ###########################################################################
+   NORR HERO
+########################################################################### */
+
+.norr-page {
+    background-color: #000;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.norr-hero {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    min-height: calc(100vh - 100px);
+
+    padding-top: 60px;
+
+    /* ← ODSTĘP OD LEWEJ KRAWĘDZI EKRANU */
+    padding-left: 80px;
+
+    /* ← ODSTĘP OD PRAWEJ KRAWĘDZI EKRANU */
+    padding-right: 80px;
+}
+
+/* ###########################################################################
+   LEFT — logo + linia + tekst
+########################################################################### */
+
+.norr-left {
+    display: flex;
+    flex-direction: column;
+
+    /* ← SZEROKOŚĆ LEWEJ KOLUMNY — zmniejszona, żeby tekst był bliżej zdjęcia */
+    width: 220px;
+    flex-shrink: 0;
+
+    z-index: 2;
+}
+
+.norr-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 28px;
+}
+
+.norr-logo {
+    /* ← ROZMIAR LOGO (zawiera nazwę "Norr") */
+    width: 160px;
+    height: auto;
+}
+
+.norr-divider {
+    width: 160px;
+    height: 1px;
+    background-color: #555;
+
+    margin-bottom: 28px;
+}
+
+.norr-intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.norr-symbol {
+    font-size: 12px;
+    color: #F2FDFF;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.norr-text {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #F2FDFF;
+    margin: 0;
+}
+
+/* ###########################################################################
+   CENTER — can + glow
+########################################################################### */
+
+.norr-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+.norr-glow {
+    position: absolute;
+
+    /* ← ROZMIAR ŚWIATŁA ZA PUSZKĄ */
+    width: 600px;
+    height: 600px;
+
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+
+    /* ← POZYCJA ŚWIATŁA — przesunięcie względem środka */
+    transform: translate(40px, -20px);
+}
+
+.norr-can {
+    position: relative;
+
+    /* ← WYSOKOŚĆ PUSZKI */
+    height: 78vh;
+    max-height: 700px;
+
+    object-fit: contain;
+
+    /* ← POZYCJA PUSZKI — przesunięcie od środka ekranu */
+    transform: translateX(60px);
+}
+
+/* ###########################################################################
+   RIGHT — tekst przy puszce
+########################################################################### */
+
+.norr-right {
+    position: absolute;
+
+    /* ← POZYCJA TEKSTU PO PRAWEJ — bliżej puszki */
+    right: 220px;
+    top: 55%;
+
+    width: 220px;
+
+    z-index: 2;
+}
+
+.norr-right .norr-text {
+    text-align: left;
+}
+
+/* ###########################################################################
+   RESPONSIVE
+########################################################################### */
+
+@media (max-width: 1100px) {
+
+    .norr-hero {
+        flex-direction: column;
+        padding-left: 30px;
+        padding-right: 30px;
+        gap: 60px;
+    }
+
+    .norr-center {
+        position: relative;
+        min-height: 60vh;
+    }
+
+    .norr-can {
+        height: 50vh;
+        transform: none;
+    }
+
+    .norr-right {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+    }
+}

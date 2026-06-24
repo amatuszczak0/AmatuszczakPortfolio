@@ -1,0 +1,189 @@
+/* ###########################################################################
+   ANIMATIONS
+########################################################################### */
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ###########################################################################
+   BODY / NAVBAR
+########################################################################### */
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-mask {
+    display: none;
+}
+ 
+.main-logo {
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.1s;
+}
+ 
+
+/* ###########################################################################
+   HERO
+########################################################################### */
+
+.pp-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Parallax wrapper */
+.pp-hero-parallax {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.pp-hero-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    display: block;
+    will-change: transform;
+}
+
+/* Dark overlay — stronger at bottom for text legibility */
+.pp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0.25) 40%,
+        rgba(0,0,0,0.72) 75%,
+        rgba(0,0,0,0.88) 100%
+    );
+    z-index: 1;
+}
+
+/* Centered content block */
+.pp-hero-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: min(680px, 88vw);
+
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.6s;
+}
+
+.pp-brand-logo {
+    width: clamp(120px, 18vw, 200px);
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    /* Gothic/blackletter logo — give it room to breathe */
+    filter: drop-shadow(0 2px 24px rgba(0,0,0,0.6));
+}
+
+.pp-hero-desc {
+    font-size: clamp(10px, 1.1vw, 14px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(242, 253, 255, 0.82);
+    max-width: 820px;
+}
+
+/* Coming Soon label — bottom center */
+.pp-coming-soon {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    font-size: clamp(13px, 1.2vw, 16px);
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(242, 253, 255, 0.45);
+
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.4s;
+}
+
+/* ###########################################################################
+   RESPONSIVE
+########################################################################### */
+
+@media (max-width: 768px) {
+
+    .pp-hero-content {
+        width: 88vw;
+        top: 52%;
+    }
+
+    .pp-brand-logo {
+        width: clamp(180px, 55vw, 280px);
+        margin-bottom: 24px;
+    }
+
+    .pp-hero-desc {
+        font-size: 13px;
+    }
+
+    .pp-coming-soon {
+        bottom: 32px;
+        letter-spacing: 3px;
+    }
+
+    .pp-back-section {
+        padding: 40px 0 80px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .pp-brand-logo {
+        width: 65vw;
+    }
+
+    .pp-hero-desc {
+        font-size: 12px;
+    }
+
+    .pp-coming-soon {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+}

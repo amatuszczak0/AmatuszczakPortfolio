@@ -1,0 +1,701 @@
+/* ###########################################################################
+   BASE
+########################################################################### */
+
+body { padding-top: 100px; }
+
+.navbar {
+    position: fixed;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+}
+
+.logo-link { display: inline-block; text-decoration: none; flex-shrink: 0; }
+
+.norr-page { background-color: #000; }
+
+/* ###########################################################################
+   SHARED — parallax bg
+########################################################################### */
+
+.norr-bg-parallax {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.norr-bg-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Shared header — mini-square + label */
+.norr-logo-header {
+    display: flex;
+    align-items: center;
+    gap: 180px;
+    width: 100%;
+    border-top: 1px solid #333;
+    padding: 60px 0;
+    padding-left: clamp(120px, 14vw, 260px);
+    margin-bottom: 60px;
+}
+
+.norr-logo-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* ###########################################################################
+   HERO ANIMATIONS
+########################################################################### */
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes canReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.94);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ###########################################################################
+   HERO
+########################################################################### */
+
+.norr-hero {
+    position: relative;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    z-index: 2;
+
+    margin-bottom: 50px;
+}
+
+.norr-hero-inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 320px auto 320px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    gap: 0;
+}
+
+.norr-left {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-self: end;
+    align-self: start;
+    margin-top: 10vh;
+    z-index: 3;
+    margin-bottom: -120px;
+
+    opacity: 0;
+    animation: slideFromLeft 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.norr-brand { margin-bottom: 28px; }
+.norr-logo { width: 150px; height: auto; }
+
+.norr-symbol {
+    font-size: 20px;
+    color: #F2FDFF;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.norr-text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #F2FDFF;
+    margin: 0;
+}
+
+.norr-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    animation: canReveal 1.1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.7s;
+}
+
+.norr-can {
+    height: 78vh;
+    max-height: 700px;
+    object-fit: contain;
+
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                filter 0.6s ease;
+    transform-origin: bottom center;
+    will-change: transform;
+}
+
+.norr-can:hover {
+    transform: scale(1.06) rotate(3deg);
+    filter: drop-shadow(0 20px 60px rgba(111, 131, 134, 0.35));
+}
+
+.norr-right {
+    width: 300px;
+    justify-self: start;
+    align-self: end;
+    padding-bottom: 100px;
+    z-index: 3;
+
+    opacity: 0;
+    animation: slideFromRight 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.1s;
+}
+
+/* ###########################################################################
+   VISUAL IDENTITY
+########################################################################### */
+
+.norr-vi {
+    position: relative;
+    overflow: hidden;
+    padding: 80px clamp(40px, 5vw, 80px);
+    z-index: 1;
+}
+
+.norr-vi-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+}
+
+.norr-vi-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.norr-vi-text {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.norr-vi-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 20px;
+}
+
+.norr-vi-text p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Swatches */
+.norr-vi-swatches {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.norr-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.norr-swatch__color {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.norr-swatch__info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2px 8px;
+    align-items: baseline;
+}
+
+.norr-swatch__label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.norr-swatch__info span:not(.norr-swatch__label) {
+    font-size: 10px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+/* ###########################################################################
+   LOGO SECTION
+########################################################################### */
+
+.norr-logo-section {
+    background: #000;
+    padding: 0 0 80px;
+}
+
+.norr-logo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+    padding-left: clamp(120px, 14vw, 260px);
+    padding-right: clamp(40px, 5vw, 80px);
+    margin-bottom: 120px;
+}
+
+.norr-logo-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.norr-logo-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 5000px;
+    margin: 0;
+}
+
+.norr-proportions-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+}
+
+.norr-logo-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Odejmujemy gap bo akapity są osobno w HTML */
+}
+
+.norr-logo-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.norr-sub-text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 380px;
+}
+
+/* --- 3 warianty logo --- */
+.norr-logo-variants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 60px;
+    padding: 0 clamp(120px, 14vw, 260px);
+    margin-top: 80px;
+}
+
+.norr-logo-variant {
+    padding: 0 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ← ZMIEŃ TĘ WARTOŚĆ żeby skalować wszystkie loga */
+:root {
+    --logo-variant-height: 70px;
+}
+
+.norr-logo-variant__img {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.norr-logo-variant__img img {
+    height: var(--logo-variant-height);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.norr-logo-variant__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 28px;
+}
+
+.norr-logo-variant__desc {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #fff;
+    margin: 0 0 16px;
+    max-width: 300px;
+}
+
+.norr-logo-variant__desc:last-child {
+    margin-bottom: 0;
+}
+
+/* Osobny blok dla tekstów — stałe wymiary, niezależny od grida */
+.norr-logo-variant-descs {
+    display: flex;
+    gap: 10px;
+    margin-left: clamp(120px, 14vw, 260px);
+}
+
+.norr-logo-variant-desc {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.norr-logo-variant-desc p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+}
+
+/* ###########################################################################
+   FLAVORS SECTION
+########################################################################### */
+
+.norr-flavors-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.norr-flavors-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.norr-flavors-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    display: block;
+}
+
+.norr-flavors-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.norr-flavors-text {
+    position: relative;
+    z-index: 2;
+    padding: 60px clamp(40px, 5vw, 80px) 60px clamp(120px, 14vw, 260px);
+    max-width: 1200px;
+}
+
+.norr-flavors-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 48px;
+}
+
+.norr-flavors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 40px;
+}
+
+.norr-flavor-item {
+    margin-bottom: 0;
+}
+
+.norr-flavor-item:last-child {
+    margin-bottom: 0;
+}
+
+.norr-flavor-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.norr-flavor-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cfcfcf;
+    margin: 0;
+    max-width: 260px;
+}
+
+/* ###########################################################################
+   RESPONSIVE
+########################################################################### */
+
+@media (max-width: 1100px) {
+
+    .norr-hero-inner {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .norr-left { justify-self: start; width: 100%; margin-bottom: 0; }
+    .norr-right { width: 100%; justify-self: start; margin-bottom: 0; padding-bottom: 0; }
+    .norr-center { height: 50vh; }
+    .norr-can { height: 100%; }
+
+    .norr-vi-inner { flex-direction: column; gap: 60px; }
+    .norr-vi-text { max-width: 100%; }
+
+    .norr-logo-header { gap: 40px; padding: 40px 5vw; }
+    .norr-logo-content { grid-template-columns: 1fr; gap: 48px; padding-left: 5vw; padding-right: 5vw; }
+
+    .norr-logo-variants { grid-template-columns: 1fr; padding: 0 5vw; }
+    .norr-logo-variant { padding: 40px 0; }
+
+    .norr-flavors-content { grid-template-columns: 1fr; gap: 48px; padding-left: 5vw; padding-right: 5vw; }
+}
+
+@media (max-width: 768px) {
+
+    .norr-hero { height: auto; min-height: calc(100vh - 100px); }
+
+    .norr-vi { padding: 120px 5vw 80px; }
+    .norr-vi-swatches { flex-wrap: wrap; }
+    .norr-swatch__color { width: 80px; height: 80px; }
+
+    /* Variant descs — stack pionowo */
+    .norr-logo-variant-descs {
+        flex-direction: column;
+        margin-left: 5vw;
+        gap: 32px;
+    }
+
+    .norr-logo-variant-desc {
+        width: 100%;
+    }
+
+    /* Flavors — padding poprawiony */
+    .norr-flavors-text {
+        padding: 60px 5vw;
+    }
+
+    .norr-flavors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body { padding-top: 80px; }
+
+    /* Hero */
+    .norr-hero-inner {
+        padding: 24px 16px;
+        gap: 24px;
+    }
+
+    .norr-center { height: 40vh; }
+
+    .norr-text { font-size: 15px; }
+
+    /* VI */
+    .norr-vi { padding: 80px 16px 60px; }
+    .norr-swatch__color { width: 64px; height: 64px; }
+
+    /* Logo */
+    .norr-logo-header { padding: 32px 16px; gap: 24px; }
+    .norr-logo-content { padding-left: 16px; padding-right: 16px; }
+    .norr-logo-variants { padding: 0 16px; }
+    .norr-logo-variant-descs { margin-left: 16px; margin-right: 16px; }
+
+    /* Typo */
+    .norr-typo-content { padding-left: 16px; padding-right: 16px; }
+    .norr-typo-weights span { font-size: 44px; }
+    .norr-typo-center p { font-size: 22px; }
+
+    /* Flavors */
+    .norr-flavors-text { padding: 40px 16px; }
+    .norr-flavors-title { font-size: 24px; }
+}
+
+/* ###########################################################################
+   TYPOGRAPHY SECTION
+########################################################################### */
+
+.norr-typo-section {
+    background: #000;
+    padding-bottom: 120px;
+}
+
+/* Typography uses a two-part layout:
+   Left block (weights + alphabet) starts at the same left indent as the rest of the page.
+   Right block (paragraphs) starts at the same position as .norr-logo-variant-descs. */
+
+.norr-typo-content {
+    display: flex;
+    align-items: start;
+    padding-left: clamp(120px, 14vw, 260px);
+    padding-right: clamp(40px, 5vw, 80px);
+    gap: 0;
+}
+
+/* Left wrapper: width mirrors the left 1fr column of .norr-logo-content
+   so .norr-typo-right aligns with "The Norr logo is built…" */
+.norr-typo-left-block {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: min(calc(50vw - clamp(120px, 14vw, 260px)), 500px);
+    min-width: 260px;
+}
+
+.norr-typo-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 40px;
+}
+
+.norr-typo-weights-and-alpha {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.norr-typo-weights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.norr-typo-weights span {
+    font-family: 'Chillax', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: #fff;
+    display: block;
+}
+
+.norr-typo-center {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 0;
+}
+
+.norr-typo-center p {
+    font-family: 'Chillax', sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 1.3;
+    color: #fff;
+    margin: 0;
+}
+
+.norr-typo-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex-grow: 1;
+    padding-left: 15vh;
+}
+
+.norr-typo-right p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0 0 24px 0;
+    max-width: 380px;
+}
+
+.norr-typo-right p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1100px) {
+    .norr-typo-content {
+        flex-direction: column;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        gap: 48px;
+    }
+    .norr-typo-right {
+        padding-left: 0;
+    }
+    .norr-typo-weights-and-alpha {
+        flex-wrap: wrap;
+    }
+}

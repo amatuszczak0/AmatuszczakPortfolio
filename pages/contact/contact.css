@@ -1,0 +1,238 @@
+/* ###########################################################################
+   VARIABLES
+########################################################################### */
+
+:root {
+    --offset-title:        clamp(80px, 15vw, 280px);
+    --offset-content:      clamp(120px, 22vw, 500px);
+    --contact-details-gap: clamp(60px, 10vw, 220px);
+    --contact-title-size:  clamp(72px, 8vw, 112px);
+    --page-padding-x:      clamp(40px, 5vw, 80px);
+}
+
+/* ###########################################################################
+   ANIMATIONS
+########################################################################### */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ###########################################################################
+   BODY
+########################################################################### */
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    padding-top: 100px;
+}
+
+/* ###########################################################################
+   NAVBAR
+########################################################################### */
+
+.navbar {
+    position: relative;
+    margin-bottom: -100px;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+/* ###########################################################################
+   CONTACT PAGE
+########################################################################### */
+
+.contact-page {
+    padding: 10px var(--page-padding-x) 120px;
+}
+
+.contact-hero {
+    max-width: 1500px;
+}
+
+.contact-title-wrapper {
+    position: relative;
+    display: inline-block;
+
+    margin-bottom: 62px;
+    margin-left: var(--offset-title);
+}
+
+.contact-title {
+    font-size: var(--contact-title-size);
+    font-weight: 700;
+    line-height: 0.9;
+
+    margin: 0;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.contact-tag-wrapper {
+    position: absolute;
+
+    left: 58%;
+    top: 58%;
+
+    transform: translate(10%, -30%) rotate(1deg);
+
+    width: 180px;
+
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.contact-tag {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.contact-tag-mask {
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+
+    transform: translateX(0%);
+
+    animation: revealLogoFromLeft 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.contact-intro {
+    margin-left: var(--offset-content);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 350px;
+}
+
+.contact-symbol {
+    font-size: 14px;
+    font-weight: 300;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.2s;
+}
+
+.contact-intro p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.4s;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--contact-details-gap);
+
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 42px;
+    font-weight: 600;
+
+    background-image: linear-gradient(#fff, #fff);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+
+    transition:
+        background-size 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-link:hover {
+    background-size: 100% 2px;
+    transform: translateY(-4px);
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(50px, 5vw, 82px);
+
+    max-width: 1000px;
+
+    margin-left: var(--offset-content);
+    margin-right: auto;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.7s;
+}
+
+.info-block p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* ###########################################################################
+   RESPONSIVE
+########################################################################### */
+
+@media (max-width: 1400px) {
+    .contact-link {
+        font-size: 34px;
+    }
+
+    .contact-tag-wrapper {
+        width: 150px;
+    }
+
+    .contact-info-grid {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .contact-details {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+        margin-left: var(--offset-content);
+    }
+
+    .contact-link {
+        font-size: 24px;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

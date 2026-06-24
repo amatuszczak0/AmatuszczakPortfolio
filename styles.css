@@ -1,0 +1,1191 @@
+/* Import fontu Switzer z Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@1,2&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+body {
+    background-color: #000;
+    color: #F2FDFF;
+    font-family: 'Switzer', sans-serif;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ###########################################################################
+   ANIMATIONS
+########################################################################### */
+
+@keyframes lineReveal {
+    0% {
+        transform: translateX(-101%);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(101%);
+    }
+}
+
+@keyframes revealFromLeft {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    50%,
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes revealLogoFromLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(101%);
+    }
+}
+
+@keyframes revealGradientFromLeft {
+    0% {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    100% {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ###########################################################################
+   HEADER
+########################################################################### */
+
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.main-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-mask {
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+
+    transform: translateX(0%);
+
+    animation: revealLogoFromLeft 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: 2;
+
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+
+    padding: 30px 30px;
+}
+
+.nav-left {
+    display: flex;
+}
+
+.nav-links-group {
+    display: flex;
+    gap: 40px;
+    margin-left: clamp(80px, 8vw, 180px);
+}
+
+/* Reveal animation shared */
+
+.nav-links-group a,
+.breadcrumb-item {
+    clip-path: inset(0 100% 0 0);
+    animation: revealFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Nav links */
+
+.nav-links-group a {
+    position: relative;
+    display: inline-block;
+    padding: 4px 0;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 12pt;
+
+    overflow: hidden;
+
+    background-image: linear-gradient(#fff, #fff);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+
+    transition: background-size 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover {
+    background-size: 100% 1px;
+}
+
+.nav-links-group a::before {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #fff;
+
+    transform: translateX(-101%);
+
+    animation: lineReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Link delays */
+
+.nav-links-group a:nth-child(1),
+.nav-links-group a:nth-child(1)::before {
+    animation-delay: 0.2s;
+}
+
+.nav-links-group a:nth-child(2),
+.nav-links-group a:nth-child(2)::before {
+    animation-delay: 0.5s;
+}
+
+.nav-links-group a:nth-child(3),
+.nav-links-group a:nth-child(3)::before {
+    animation-delay: 0.8s;
+}
+
+/* Breadcrumbs */
+
+.nav-breadcrumbs {
+    display: flex;
+    gap: 20px;
+
+    justify-content: flex-start;
+    margin-left: auto;
+    padding-left: 80px;
+    padding-right: clamp(40px, 6vw, 120px);
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+
+    color: #555;
+    text-decoration: none;
+    font-size: 12pt;
+
+    transition: color 0.3s ease;
+
+    animation-delay: 1.5s;
+}
+
+.breadcrumb-item.active,
+.breadcrumb-item:hover {
+    color: #fff;
+}
+
+.b-arrow {
+    margin-right: 8px;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* ###########################################################################
+   HERO
+########################################################################### */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: bottom; /* ← dodaj tę linię */
+}
+
+.hero-tag {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 33%, rgba(0,0,0,0) 66%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 33%, rgba(0,0,0,0) 66%, rgba(0,0,0,0) 100%);
+    -webkit-mask-size: 300% 100%;
+    mask-size: 300% 100%;
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    animation: revealGradientFromLeft 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 2s;
+}
+
+.hero-tag img {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+.hero-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+    transform: translateY(-15px);
+
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 2s;
+}
+
+.hero-brand .brand-name {
+    font-size: 8pt;
+    font-weight: 400;
+
+    transform: translateX(-30px);
+}
+
+.hero-brand .brand-sub {
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    transform: translateX(30px);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    pointer-events: none;
+}
+
+.hero-lang {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    clip-path: inset(0 100% 0 0);
+    animation: revealFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.8s;
+}
+
+.lang-switcher {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #555;
+    font-family: 'Switzer', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    transition: color 0.4s ease, font-size 0.4s cubic-bezier(0.25, 1, 0.5, 1), order 0s;
+    line-height: 1;
+}
+
+.lang-btn.active {
+    color: #F2FDFF;
+    font-size: 18px;
+    font-weight: 600;
+    order: -1;
+}
+
+.lang-btn:hover {
+    color: #F2FDFF;
+}
+
+.hero-lang .mini-square {
+    width: 8px;
+    height: 8px;
+}
+
+/* ###########################################################################
+   MANIFESTO
+########################################################################### */
+
+.mini-square {
+    width: 15px;
+    height: 15px;
+
+    background-color: #fff;
+
+    flex-shrink: 0;
+}
+
+.manifesto-section {
+    background-color: #000;
+
+    min-height: 100vh;
+    padding: 150px 0;
+}
+
+.manifesto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+
+    margin-left: clamp(120px, 14vw, 260px);
+}
+
+.manifesto-header {
+    display: flex;
+    align-items: center;
+    gap: 180px;
+}
+
+.manifesto-main {
+    max-width: 650px;
+}
+
+.manifesto-main p {
+    margin: 0;
+
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.reveal-line {
+    display: block;
+    overflow: hidden;
+
+    margin-bottom: 60px;
+}
+
+.reveal-line p {
+    transform: translateY(105%);
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-line.active p {
+    transform: translateY(0);
+}
+
+.reveal-line:nth-child(1) p {
+    transition-delay: 0.4s;
+}
+
+.reveal-line:nth-child(2) p {
+    transition-delay: 1s;
+}
+
+.reveal-line:nth-child(3) p {
+    transition-delay: 1.6s;
+}
+
+.manifesto-footer p {
+    margin-left: 195px;
+
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+/* ###########################################################################
+   WORKS DIVIDER
+########################################################################### */
+
+.works-divider-section {
+    background-color: #000;
+
+    border-top: 1px solid #333;
+
+    padding: 150px 0 100px;
+}
+
+.works-header-container {
+    display: flex;
+    align-items: center;
+    gap: 180px;
+
+    width: min(1400px, 88vw);
+
+    margin: 0 auto;
+}
+
+/* ###########################################################################
+   PROJECT SECTION
+########################################################################### */
+
+.project-section-1 {
+    background-color: #000;
+    color: #fff;
+
+    margin-top: 100px;
+    padding: 20px 0;
+}
+
+.s1-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: min(1400px, 88vw);
+    margin: 0 auto;
+}
+
+.s1-header {
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo-col {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.project-logo {
+    display: block;
+
+    max-width: 100px;
+    height: auto;
+}
+
+.desc-col {
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.project-description {
+    max-width: 380px;
+
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+/* Gallery */
+
+.s1-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.img-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-wrapper a {
+    display: block;
+    text-decoration: none;
+}
+
+.img-1 {
+    width: 280px;
+}
+
+.img-2 {
+    width: 620px;
+}
+
+.img-container-1 {
+    position: relative;
+
+    width: 100%;
+    height: 62vh;
+
+    overflow: hidden;
+}
+
+.img-container-1 img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+
+    width: 100%;
+    height: 140%;
+
+    object-fit: cover;
+
+    transition: filter 0.6s ease;
+}
+
+.img-container-1:hover img {
+    filter: contrast(1.1);
+}
+
+.date {
+    align-self: flex-end;
+
+    margin-top: 10px;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* ###########################################################################
+   PROJECT SEPARATOR
+########################################################################### */
+
+.project-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 100px 0;
+
+    background-color: #000;
+}
+
+.separator-content {
+    display: flex;
+    justify-content: center;
+
+    max-width: 1200px;
+}
+
+.separator-image {
+    display: block;
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+
+    opacity: 0.5;
+}
+
+/* ###########################################################################
+   PROJECT SECTION 2
+########################################################################### */
+
+.project-section-2 {
+    background-color: #000;
+
+    padding: 20px;
+    margin-bottom: 200px;
+}
+
+.s2-gallery {
+    display: flex;
+    align-items: flex-start;
+    gap: 42px;
+
+    width: min(1400px, 88vw);
+
+    margin: 0 auto;
+
+    padding-left: 300px;
+}
+
+.s2-img-large,
+.s2-img-small {
+    display: flex;
+    flex-direction: column;
+}
+
+.s2-img-large {
+    width: 280px;
+}
+
+.s2-img-small {
+    width: 160px;
+}
+
+.img-container-2 {
+    position: relative;
+
+    width: 100%;
+    height: 32vh;
+
+    overflow: hidden;
+}
+
+.img-container-2 img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+
+    width: 100%;
+    height: 140%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: filter 0.6s ease;
+}
+
+.img-container-2:hover img {
+    filter: contrast(1.1);
+}
+
+/* ###########################################################################
+   SEE ALL PROJECTS
+########################################################################### */
+
+.see-all-projects-section {
+    background-color: #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 60px 0 250px;
+}
+
+.see-all-link {
+    position: relative;
+    display: inline-block;
+    padding: 4px 0;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 14pt;
+    font-weight: 400;
+
+    overflow: hidden;
+
+    background-image: linear-gradient(#fff, #fff);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+
+    transition: background-size 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.see-all-link:hover {
+    background-size: 100% 1px;
+}
+
+.see-all-link .arrow-right {
+    display: inline-block;
+}
+
+/* ###########################################################################
+   FULLWIDTH PHOTO SECTION
+########################################################################### */
+
+.fullwidth-photo-section {
+    background-color: #000;
+
+    width: 100%;
+    height: 70vh;
+
+    overflow: hidden;
+}
+
+.fullwidth-photo-parallax {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.fullwidth-photo-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+
+    width: 100%;
+    height: 140%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* ###########################################################################
+   RESPONSIVE
+########################################################################### */
+
+/* ── 1280px — duże laptopy / małe monitory ────────────────────────────── */
+@media (max-width: 1280px) {
+
+    .manifesto-main p {
+        font-size: 44px;
+    }
+
+    .s2-gallery {
+        padding-left: 200px;
+    }
+}
+
+/* ── 1024px — tablety poziomo / małe laptopy ─────────────────────────── */
+@media (max-width: 1024px) {
+
+    /* Nawigacja */
+    .nav-links-group {
+        gap: 24px;
+    }
+
+    .nav-breadcrumbs {
+        gap: 12px;
+        padding-right: 20px;
+    }
+
+    /* Manifesto */
+    .manifesto-section {
+        padding: 100px 0;
+    }
+
+    .manifesto-container {
+        gap: 80px;
+        margin-left: clamp(40px, 8vw, 120px);
+    }
+
+    .manifesto-header {
+        gap: 80px;
+    }
+
+    .manifesto-main p {
+        font-size: 38px;
+    }
+
+    .manifesto-footer p {
+        margin-left: 100px;
+    }
+
+    /* Works divider */
+    .works-divider-section {
+        padding: 80px 0 60px;
+    }
+
+    .works-header-container {
+        gap: 80px;
+    }
+
+    /* Project section 1 */
+    .img-1 { width: 220px; }
+    .img-2 { width: auto; flex: 1; }
+
+    /* Project section 2 */
+    .s2-gallery {
+        padding-left: 100px;
+        gap: 24px;
+    }
+
+    .s2-img-large { width: 220px; }
+    .s2-img-small { width: 120px; }
+}
+
+/* ── 768px — tablety pionowo ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Nawigacja — ukryj breadcrumby, które i tak nie zmieszczą się */
+    .nav-breadcrumbs {
+        display: none;
+    }
+
+    .nav-links-group {
+        gap: 16px;
+        margin-left: clamp(20px, 5vw, 60px);
+    }
+
+    .nav-links-group a {
+        font-size: 10pt;
+    }
+
+    /* Manifesto */
+    .manifesto-section {
+        padding: 80px 0;
+        min-height: auto;
+    }
+
+    .manifesto-container {
+        margin-left: 0;
+        width: 90vw;
+        margin: 0 auto;
+        gap: 60px;
+    }
+
+    .manifesto-main p {
+        font-size: clamp(28px, 7vw, 38px);
+    }
+
+    .reveal-line {
+        margin-bottom: 32px;
+    }
+
+    .manifesto-footer p {
+        margin-left: 0;
+    }
+
+    /* Works divider */
+    .works-divider-section {
+        padding: 60px 0 40px;
+    }
+
+    .works-header-container {
+        gap: 40px;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    /* Project section 1 — stos pionowy */
+    .s1-container {
+        width: 90vw;
+    }
+
+    .s1-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .logo-col {
+        width: auto;
+    }
+
+    .desc-col {
+        margin-left: 0;
+    }
+
+    .s1-gallery {
+        flex-direction: column;
+    }
+
+    .img-1,
+    .img-2 {
+        width: 100%;
+    }
+
+    .img-container-1 {
+        height: 50vw;
+    }
+
+    /* Separator */
+    .project-separator {
+        padding: 60px 0;
+    }
+
+    .separator-image {
+        max-width: 260px;
+    }
+
+    /* Project section 2 — stos pionowy */
+    .project-section-2 {
+        margin-bottom: 100px;
+    }
+
+    .s2-gallery {
+        flex-direction: column;
+        padding-left: 0;
+        width: 90vw;
+        gap: 16px;
+    }
+
+    .s2-img-large,
+    .s2-img-small {
+        width: 100%;
+    }
+
+    .img-container-2 {
+        height: 50vw;
+    }
+
+    /* See all */
+    .see-all-projects-section {
+        padding: 40px 0 120px;
+    }
+
+    /* Fullwidth photo */
+    .fullwidth-photo-section {
+        height: 50vw;
+    }
+}
+
+/* ── 480px — telefony ────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    /* ── NAVBAR ── */
+    .navbar {
+        padding: 16px 20px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Logo zostaje po lewej */
+    .logo-wrapper { order: 1; }
+
+    /* Linki nawigacyjne po prawej */
+    .nav-left {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .nav-links-group {
+        gap: 16px;
+        margin-left: 0;
+    }
+
+    .nav-links-group a {
+        font-size: 9pt;
+    }
+
+    /* Ukryj breadcrumby */
+    .nav-breadcrumbs { display: none; }
+
+    /* ── HERO — tag i brand ── */
+
+    /* Tag mniejszy, nie nachodzi na tekst */
+    .hero-tag {
+        top: 44%;
+    }
+
+    .hero-tag img {
+        width: 160px;
+    }
+
+    .hero-brand .brand-name,
+    .hero-brand .brand-sub {
+        font-size: 6.5pt;
+    }
+
+    /* Przełącznik języka — mniejszy */
+    .hero-lang {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .lang-btn.active {
+        font-size: 14px;
+    }
+
+    .lang-btn {
+        font-size: 9px;
+    }
+
+    .hero-lang .mini-square {
+        width: 6px;
+        height: 6px;
+    }
+
+    /* ── MANIFESTO ── */
+    .manifesto-section {
+        padding: 60px 0;
+    }
+
+    .manifesto-container {
+        gap: 40px;
+    }
+
+    .manifesto-header {
+        gap: 20px;
+    }
+
+    .mini-square {
+        width: 10px;
+        height: 10px;
+    }
+
+    .manifesto-main p {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+
+    .reveal-line {
+        margin-bottom: 20px;
+    }
+
+    /* ── WORKS DIVIDER ── */
+    .works-divider-section {
+        padding: 32px 0 24px;
+    }
+
+    .works-header-container {
+        gap: 20px;
+    }
+
+    .projects-title {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    /* ── PROJECT SECTION 1 — Hundred Bears ── */
+    .project-section-1 {
+        margin-top: 40px;
+    }
+
+    .s1-container {
+        width: 92vw;
+        gap: 24px;
+    }
+
+    /* Logo Hundred Bears — większe żeby było widoczne */
+    .project-logo {
+        max-width: 160px;
+    }
+
+    /* Ukryj drugie zdjęcie (img-2), zostaw tylko pierwsze */
+    .img-2 {
+        display: none;
+    }
+
+    .img-1 {
+        width: 100%;
+    }
+
+    .img-container-1 {
+        height: 70vw;
+    }
+
+    /* ── PROJECT SEPARATOR ── */
+    .project-separator {
+        padding: 40px 0;
+    }
+
+    .separator-image {
+        max-width: 180px;
+    }
+
+    /* ── PROJECT SECTION 2 ── */
+    .project-section-2 {
+        margin-bottom: 60px;
+    }
+
+    .s2-gallery {
+        width: 92vw;
+    }
+
+    .img-container-2 {
+        height: 60vw;
+    }
+
+    /* ── SEE ALL ── */
+    .see-all-projects-section {
+        padding: 32px 0 80px;
+    }
+
+    /* ── FULLWIDTH PHOTO ── */
+    .fullwidth-photo-section {
+        height: 55vw;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+        padding: 20px 20px 48px;
+    }
+
+    .footer-top {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .footer-line {
+        margin-top: 16px;
+        margin-bottom: 28px;
+    }
+
+    .footer-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+        margin-bottom: 24px;
+    }
+
+    .contact-row {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .contact-row a {
+        font-size: 15px;
+    }
+
+    .footer-socials {
+        gap: 28px;
+        flex-wrap: wrap;
+        margin-top: 32px;
+    }
+
+    .social-group {
+        gap: 10px;
+        min-width: 120px;
+    }
+
+    .social-group a {
+        font-size: 15px;
+    }
+
+    .social-group span {
+        font-size: 9px;
+    }
+
+    .footer-credits {
+        gap: 6px;
+    }
+
+    .footer-photos {
+        font-size: 12px;
+    }
+}

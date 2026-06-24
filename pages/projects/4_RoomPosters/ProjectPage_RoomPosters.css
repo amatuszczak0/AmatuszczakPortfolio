@@ -1,0 +1,406 @@
+/* ###########################################################################
+   VARIABLES
+########################################################################### */
+
+:root {
+    --offset-title:   clamp(60px, 12vw, 150px);
+    --offset-content: clamp(120px, 22vw, 500px);
+    --project-title-size: clamp(52px, 6vw, 80px);
+    --page-padding-x: clamp(40px, 5vw, 80px);
+}
+
+/* ###########################################################################
+   ANIMATIONS
+########################################################################### */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ###########################################################################
+   BODY
+########################################################################### */
+
+body {
+    padding-top: 100px;
+}
+
+/* ###########################################################################
+   NAVBAR
+########################################################################### */
+
+.navbar {
+    position: absolute;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+/* ###########################################################################
+   HERO
+########################################################################### */
+
+.project-hero {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 10px var(--page-padding-x) 0;
+}
+
+.project-title-wrapper {
+    position: relative;
+    display: inline-block;
+
+    margin-bottom: 62px;
+    margin-left: var(--offset-title);
+}
+
+.project-title {
+    font-size: var(--project-title-size);
+    font-weight: 600;
+    line-height: 0.9;
+
+    margin: 0;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ###########################################################################
+   INTRO
+########################################################################### */
+
+.project-intro {
+    margin-left: var(--offset-content);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 350px;
+
+    margin-bottom: 50px;
+}
+
+.project-symbol {
+    font-size: 14px;
+    font-weight: 300;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.2s;
+}
+
+.project-intro p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.4s;
+}
+
+/* ###########################################################################
+   PHOTO SECTION
+########################################################################### */
+
+.project-photo-section {
+    height: 50vh;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.6s;
+}
+
+.project-photo-parallax {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-photo-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+
+    width: 100%;
+    height: 140%;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* ###########################################################################
+   OUTRO
+########################################################################### */
+
+.project-outro {
+    margin-left: var(--offset-content);
+    max-width: 350px;
+
+    margin-top: 80px;
+    margin-bottom: 160px;
+
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 1.8s;
+}
+
+.project-outro p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* ###########################################################################
+   RESPONSIVE
+########################################################################### */
+
+@media (max-width: 768px) {
+
+    .project-title-wrapper {
+        margin-left: 5vw;
+        margin-bottom: 40px;
+    }
+
+    .project-intro,
+    .project-outro {
+        margin-left: 5vw;
+        max-width: 90vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .project-title-wrapper {
+        margin-left: 4vw;
+    }
+
+    .project-intro,
+    .project-outro {
+        margin-left: 4vw;
+    }
+}
+
+/* ###########################################################################
+   POSTERS SECTION
+########################################################################### */
+
+.posters-section {
+    max-width: 1000px;           /* było 900px, +100px */
+    margin: 0 auto;
+    padding: 0 var(--page-padding-x) 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+/* Pojedynczy wpis */
+
+.poster-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.poster-entry--left  { flex-direction: row; }
+.poster-entry--right { flex-direction: row; }
+
+/* Wszystkie postery — ten sam rozmiar */
+.poster-entry__image { 
+  flex-shrink: 0; 
+  width: 200px; 
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+.poster-entry__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --large i --small nie nadpisują już szerokości postera */
+.poster-entry__image--large {
+    width: 200px;   /* wyrównane do reszty */
+}
+
+/* Mały obrazek w tekście (nart / song screen) */
+.poster-entry__image--small {
+    flex-shrink: 0;
+    width: 120px;
+}
+
+/* Blok tekstowy */
+.poster-entry__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.poster-entry__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: #fff;
+}
+
+.poster-entry__body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.poster-entry__body p,
+.poster-entry__content > p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+}
+
+/* -----------------------------------------------------------------------
+   Everest — dwa akapity po lewej, zdjęcie wyśrodkowane pionowo po prawej
+----------------------------------------------------------------------- */
+
+.poster-entry__text-block {
+    display: flex;
+    align-items: center;   /* centruje zdjęcie pionowo względem obu akapitów */
+    gap: 20px;
+}
+
+.poster-entry__text-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.poster-entry__inline-img {
+    flex-shrink: 0;
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* -----------------------------------------------------------------------
+   Salomon — górny rząd: mała foto + tekst obok
+   Foto rozciąga się na wysokość pierwszego akapitu
+----------------------------------------------------------------------- */
+
+.poster-entry__top-row {
+    display: flex;
+    align-items: stretch;   /* stretch = foto i tekst mają tę samą wysokość */
+    gap: 20px;
+}
+
+.poster-entry__top-row p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+    flex: 1;
+}
+
+.poster-entry__top-row .poster-entry__image--small {
+    width: 120px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.poster-entry__top-row .poster-entry__image--small img {
+    width: 100%;
+    height: 100%;           /* wypełnia wysokość akapitu */
+    object-fit: cover;      /* kadruje */
+    display: block;
+}
+
+/* ###########################################################################
+   RESPONSIVE — POSTERS
+########################################################################### */
+
+@media (max-width: 768px) {
+
+    .posters-section {
+        gap: 80px;
+        padding-bottom: 80px;
+    }
+
+    .poster-entry,
+    .poster-entry--left,
+    .poster-entry--right {
+        flex-direction: column;
+    }
+
+    .poster-entry__image,
+    .poster-entry__image--large {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Na mobile inline-img wraca do auto żeby nie rozciągać dziwnie */
+    .poster-entry__inline-img {
+        width: 80px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .poster-entry__top-row {
+        align-items: flex-start;
+    }
+
+    .poster-entry__top-row .poster-entry__image--small img {
+        height: auto;
+    }
+}
+
+/* ###########################################################################
+   POSTER HOVER SCALE
+########################################################################### */
+
+.poster-entry {
+    overflow: visible;
+}
+
+.poster-entry__image {
+    overflow: visible;
+}
+
+.poster-hover {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                z-index 0s;
+}
+
+.poster-hover:hover {
+    transform: scale(1.5);
+    z-index: 10;
+}
+
+.poster-hover img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
