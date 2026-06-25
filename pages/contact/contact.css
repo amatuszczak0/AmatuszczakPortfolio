@@ -195,7 +195,7 @@ body {
     }
 
     .contact-tag-wrapper {
-        width: 3000px;
+        width: 150px;
     }
 
     .contact-info-grid {
@@ -217,9 +217,9 @@ body {
     }
 
     .contact-tag-wrapper {
-        width: 150px;
-        left: auto;
-        right: 0;
+        width: 100px;
+        left: 58%;
+        right: auto;
         top: 75%;
         transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
@@ -259,12 +259,12 @@ body {
         font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Tag — nachodzi na tytuł od prawej, analogicznie do about */
+    /* Tag — za tytułem, od lewej */
     .contact-tag-wrapper {
         display: block;
-        width: 130px;
-        left: auto;
-        right: 10px;
+        width: 100px;
+        left: 40%;
+        right: auto;
         top: 75%;
         transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
@@ -278,13 +278,13 @@ body {
     }
 
     .contact-intro p {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 300;
         line-height: 1.45;
         max-width: 100%;
     }
 
-    /* Mail i telefon — jeden pod drugim, wyśrodkowane */
+    /* Mail i telefon — jeden pod drugim */
     .contact-details {
         flex-direction: column;
         gap: 20px;
@@ -296,7 +296,7 @@ body {
     }
 
     .contact-link {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     /* Info grid — jedna kolumna z paddingiem */
@@ -308,7 +308,7 @@ body {
     }
 
     .info-block p {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 300;
         line-height: 1.45;
         max-width: 100%;
