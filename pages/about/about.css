@@ -416,21 +416,27 @@ body {
 /* ── 480px ──────────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
 
+    /* Tytuł +4px względem breakpointu 768px (był clamp(36px,...,52px)) */
     .about-title {
-        font-size: clamp(36px, 12vw, 52px);
+        font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Ukryj tag — rozjeżdża się na wąskim ekranie */
+    /* Tag — przywrócony, pozycja dostosowana do mobile */
     .about-tag-wrapper {
-        display: none;
+        display: block;
+        width: 120px;
+        left: auto;
+        right: -10px;
+        top: 50%;
+        transform: translate(0, -20%) rotate(1deg);
     }
 
     /* Tytuł i content — wyśrodkowane z paddingiem */
     .about-title-wrapper {
         margin-left: 0;
-        width: 100%;
-        padding: 0 20px;
-        box-sizing: border-box;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-bottom: 32px;
     }
 
     .about-content {
@@ -447,6 +453,14 @@ body {
         max-width: 340px;
         height: auto;
         aspect-ratio: 3 / 4;
+    }
+
+    /* Padding między zdjęciem (Antoni Matuszczak) a pierwszym akapitem */
+    .photo-caption {
+        position: static;
+        text-align: left;
+        margin-top: 12px;
+        margin-bottom: 32px;
     }
 
     /* Kolumny tekstowe — pełna szerokość, nie przy krawędzi */
