@@ -421,14 +421,14 @@ body {
         font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Tag — przywrócony, pozycja dostosowana do mobile */
+    /* Tag — przesunięty żeby nachodził na koniec tytułu */
     .about-tag-wrapper {
         display: block;
-        width: 120px;
+        width: 110px;
         left: auto;
-        right: -10px;
-        top: 50%;
-        transform: translate(0, -20%) rotate(1deg);
+        right: 60px;
+        top: 20%;
+        transform: translate(0, 0) rotate(1deg);
     }
 
     /* Tytuł i content — wyśrodkowane z paddingiem */
