@@ -190,13 +190,36 @@ body {
 
 @media (max-width: 480px) {
 
+    :root {
+        --offset-title:   20px;
+        --offset-content: 20px;
+        --project-title-size: clamp(36px, 10vw, 52px);
+        --page-padding-x: 20px;
+    }
+
     .project-title-wrapper {
-        margin-left: 4vw;
+        margin-left: var(--offset-title);
+        margin-bottom: 28px;
     }
 
     .project-intro,
     .project-outro {
-        margin-left: 4vw;
+        margin-left: var(--offset-content);
+        max-width: calc(100vw - 40px);
+    }
+
+    .project-intro {
+        gap: 14px;
+        margin-bottom: 32px;
+    }
+
+    .project-outro {
+        margin-top: 48px;
+        margin-bottom: 80px;
+    }
+
+    .project-photo-section {
+        height: 52vw;
     }
 }
 
@@ -372,6 +395,84 @@ body {
 
     .poster-entry__top-row .poster-entry__image--small img {
         height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .posters-section {
+        gap: 60px;
+        padding: 0 20px 64px;
+    }
+
+    /* Wszystkie entry — stos pionowy, pełna szerokość */
+    .poster-entry,
+    .poster-entry--left,
+    .poster-entry--right {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Poster image — pełna szerokość, bez ograniczenia max-width */
+    .poster-entry__image,
+    .poster-entry__image--large {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Wyłącz hover zoom na dotyku — wychodzi poza ekran */
+    .poster-hover:hover {
+        transform: none;
+        z-index: 1;
+    }
+
+    /* Everest: text-block → stos pionowy, inline-img pod akapitami */
+    .poster-entry__text-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .poster-entry__inline-img {
+        width: 100px;
+        height: auto;
+        align-self: flex-start;
+    }
+
+    /* Salomon: top-row → stos pionowy */
+    .poster-entry__top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .poster-entry__top-row .poster-entry__image--small {
+        width: 120px;
+        flex-shrink: 0;
+        align-self: flex-start;
+    }
+
+    .poster-entry__top-row .poster-entry__image--small img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Tekst */
+    .poster-entry__title {
+        font-size: 20px;
+    }
+
+    .poster-entry__body p,
+    .poster-entry__content > p,
+    .poster-entry__top-row p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    /* Salomon — na mobile poster idzie NA GÓRĘ (przed tekstem) */
+    .poster-entry--right {
+        flex-direction: column-reverse;
     }
 }
 
