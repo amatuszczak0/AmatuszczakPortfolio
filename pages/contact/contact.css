@@ -217,18 +217,20 @@ body {
     }
 
     .contact-tag-wrapper {
-        width: 300px;
+        width: 150px;
         left: auto;
         right: 0;
-        top: 50%;
-        transform: translate(0, -50%) rotate(1deg);
+        top: 75%;
+        transform: translate(0, -30%) rotate(1deg);
+        overflow: visible;
     }
 
     .contact-details {
         flex-direction: column;
         gap: 30px;
-        align-items: flex-start;
-        margin-left: 5vw;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .contact-link {
@@ -260,11 +262,12 @@ body {
     /* Tag — nachodzi na tytuł od prawej, analogicznie do about */
     .contact-tag-wrapper {
         display: block;
-        width: 100px;
+        width: 130px;
         left: auto;
         right: 10px;
-        top: 50%;
-        transform: translate(0, -50%) rotate(1deg);
+        top: 75%;
+        transform: translate(0, -30%) rotate(1deg);
+        overflow: visible;
     }
 
     /* Intro — wyrównany do lewej z paddingiem jak akapity w about */
@@ -281,13 +284,13 @@ body {
         max-width: 100%;
     }
 
-    /* Mail i telefon — jeden pod drugim */
+    /* Mail i telefon — jeden pod drugim, wyśrodkowane */
     .contact-details {
         flex-direction: column;
         gap: 20px;
-        align-items: flex-start;
-        margin-left: 20px;
-        margin-right: 20px;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
         margin-top: 40px;
         margin-bottom: 40px;
     }
