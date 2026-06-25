@@ -702,7 +702,7 @@ body::-webkit-scrollbar {
     align-items: center;
 
     width: 100%;
-    padding: 60px 0 250px;
+    padding: 120px 0;
 }
 
 .see-all-link {
@@ -741,7 +741,7 @@ body::-webkit-scrollbar {
     background-color: #000;
 
     width: 100%;
-    height: 70vh;
+    height: 40vh;
 
     overflow: hidden;
 }
@@ -999,7 +999,7 @@ body::-webkit-scrollbar {
     .nav-breadcrumbs { display: none; }
 
     .main-logo {
-        height: 22px;
+        height: 30px;
     }
 
     /* ── HERO — tag i brand ── */
