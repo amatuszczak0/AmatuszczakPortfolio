@@ -420,8 +420,53 @@ body {
         font-size: clamp(36px, 12vw, 52px);
     }
 
+    /* Ukryj tag — rozjeżdża się na wąskim ekranie */
+    .about-tag-wrapper {
+        display: none;
+    }
+
+    /* Tytuł i content — wyśrodkowane z paddingiem */
+    .about-title-wrapper {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
     .about-content {
-        margin-left: 4vw;
+        margin-left: 0;
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+
+    /* Zdjęcie — wyśrodkowane, sensowna wysokość */
+    .about-photo-block {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+
+    /* Kolumny tekstowe — pełna szerokość, nie przy krawędzi */
+    .about-text-column {
+        width: 100%;
+    }
+
+    .about-text-block {
+        max-width: 100%;
+        margin-top: 24px;
+    }
+
+    .about-text-block p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .second-column {
+        margin-top: 0;
+        gap: 0;
     }
 
     .story-grid {

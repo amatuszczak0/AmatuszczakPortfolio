@@ -998,6 +998,10 @@ body::-webkit-scrollbar {
     /* Ukryj breadcrumby */
     .nav-breadcrumbs { display: none; }
 
+    .main-logo {
+        height: 24px;
+    }
+
     /* ── HERO — tag i brand ── */
 
     /* Tag mniejszy, nie nachodzi na tekst */
