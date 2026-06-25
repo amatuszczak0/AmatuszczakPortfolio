@@ -703,6 +703,7 @@ body::-webkit-scrollbar {
 
     width: 100%;
     padding: 120px 0;
+    margin-bottom: 120px;
 }
 
 .see-all-link {
@@ -1164,6 +1165,6 @@ body::-webkit-scrollbar {
 
     /* ── FULLWIDTH PHOTO ── */
     .fullwidth-photo-section {
-        height: 25vh;
+        height: 20vh;
     }
 }

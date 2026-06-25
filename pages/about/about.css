@@ -428,14 +428,12 @@ body {
 /* ── 480px ──────────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
 
-    /* Tytuł +4px względem breakpointu 768px (był clamp(36px,...,52px)) */
     .about-title {
         font-size: clamp(40px, 12vw, 56px);
         margin-bottom: 10vh;
         margin-left: 10vw;
     }
 
-    /* Tag — za tytułem, od lewej */
     .about-tag-wrapper {
         display: block;
         width: 100px;
