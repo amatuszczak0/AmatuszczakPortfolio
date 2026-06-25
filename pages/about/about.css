@@ -421,14 +421,14 @@ body {
         font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Tag — siedzi na literze "t" w "About" */
+    /* Tag — nachodzi na napis "About" od prawej strony */
     .about-tag-wrapper {
         display: block;
-        width: 110px;
-        left: 180px;
-        right: auto;
-        top: -10px;
-        transform: translate(0, 0) rotate(1deg);
+        width: 130px;
+        left: auto;
+        right: -10px;
+        top: 50%;
+        transform: translate(0, -40%) rotate(1deg);
     }
 
     /* Większy margin przed pierwszym akapitem */
@@ -465,7 +465,7 @@ body {
         position: static;
         text-align: left;
         margin-top: 12px;
-        margin-bottom: 32px;
+        margin-bottom: 64px;
     }
 
     /* Kolumny tekstowe — pełna szerokość, nie przy krawędzi */
