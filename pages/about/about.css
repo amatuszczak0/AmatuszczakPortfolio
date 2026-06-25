@@ -431,23 +431,26 @@ body {
     /* Tytuł +4px względem breakpointu 768px (był clamp(36px,...,52px)) */
     .about-title {
         font-size: clamp(40px, 12vw, 56px);
+        margin-bottom: 10vh;
+        margin-left: 10vw;
     }
 
     /* Tag — za tytułem, od lewej */
     .about-tag-wrapper {
         display: block;
-        width: 130px;
-        left: 58%;
+        width: 100px;
+        left: 35%;
         right: auto;
         top: 75%;
         transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
     }
 
-    /* Większy margin przed pierwszym akapitem */
     .about-text-block:first-child {
-        margin-top: 48px;
+        margin-top: 100px;
+        padding-top: 0;
     }
+    
 
     /* Tytuł i content — wyśrodkowane z paddingiem */
     .about-title-wrapper {
