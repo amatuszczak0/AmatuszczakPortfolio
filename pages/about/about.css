@@ -349,8 +349,19 @@ body {
     }
 
     .about-title-wrapper {
+        display: block;
+        width: calc(100% - 10vw);
         margin-left: 5vw;
         margin-bottom: 40px;
+        overflow: visible;
+    }
+
+    .about-tag-wrapper {
+        width: 150px;
+        left: auto;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%) rotate(1deg);
     }
 
     /* Układ hero — stos pionowy */

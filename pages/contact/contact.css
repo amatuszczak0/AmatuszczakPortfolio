@@ -221,11 +221,27 @@ body {
         overflow-y: auto;
     }
 
+    .contact-title-wrapper {
+        display: block;
+        width: calc(100% - 10vw);
+        margin-left: 5vw;
+        margin-bottom: 40px;
+        overflow: visible;
+    }
+
+    .contact-tag-wrapper {
+        width: 150px;
+        left: auto;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%) rotate(1deg);
+    }
+
     .contact-details {
         flex-direction: column;
         gap: 30px;
         align-items: flex-start;
-        margin-left: var(--offset-content);
+        margin-left: 5vw;
     }
 
     .contact-link {
@@ -234,6 +250,8 @@ body {
 
     .contact-info-grid {
         grid-template-columns: 1fr;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
 }
 
