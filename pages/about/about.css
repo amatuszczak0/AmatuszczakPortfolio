@@ -62,7 +62,7 @@ body {
 
     width: 180px;
 
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
     z-index: 2;
 }
@@ -362,6 +362,7 @@ body {
         right: 0;
         top: 50%;
         transform: translate(0, -50%) rotate(1deg);
+        overflow: visible;
     }
 
     /* Układ hero — stos pionowy */
