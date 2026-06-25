@@ -421,14 +421,19 @@ body {
         font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Tag — przesunięty żeby nachodził na koniec tytułu */
+    /* Tag — siedzi na literze "t" w "About" */
     .about-tag-wrapper {
         display: block;
         width: 110px;
-        left: auto;
-        right: 60px;
-        top: 20%;
+        left: 180px;
+        right: auto;
+        top: -10px;
         transform: translate(0, 0) rotate(1deg);
+    }
+
+    /* Większy margin przed pierwszym akapitem */
+    .about-text-block:first-child {
+        margin-top: 48px;
     }
 
     /* Tytuł i content — wyśrodkowane z paddingiem */
