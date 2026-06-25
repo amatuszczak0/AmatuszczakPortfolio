@@ -446,20 +446,6 @@ body {
         overflow: visible;
     }
 
-    .about-text-block:first-child {
-        margin-top: 100px;
-        padding-top: 0;
-    }
-    
-
-    /* Tytuł i content — wyśrodkowane z paddingiem */
-    .about-title-wrapper {
-        display: block;
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        margin-bottom: 32px;
-        overflow: visible;
-    }
 
     .about-content {
         margin-left: 0;
@@ -485,6 +471,12 @@ body {
         margin-bottom: 64px;
     }
 
+    .about-text-block:first-child {
+        margin-top: 100px;
+        padding-top: 0;
+    }
+    
+
     /* Kolumny tekstowe — pełna szerokość, nie przy krawędzi */
     .about-text-column {
         width: 100%;
@@ -492,7 +484,6 @@ body {
 
     .about-text-block {
         max-width: 100%;
-        margin-top: 24px;
     }
 
     .about-text-block p {
@@ -502,7 +493,6 @@ body {
 
     .second-column {
         margin-top: 0;
-        gap: 0;
     }
 
     .story-grid {

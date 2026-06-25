@@ -175,15 +175,16 @@ body {
 @media (max-width: 480px) {
 
     .pp-brand-logo {
-        width: 65vw;
+        width: 150px;
     }
 
     .pp-hero-desc {
         font-size: 12px;
+        max-width: 80vw;
     }
 
     .pp-coming-soon {
-        font-size: 11px;
+        font-size: 10px;
         letter-spacing: 2px;
     }
 }
