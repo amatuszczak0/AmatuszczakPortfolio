@@ -1062,8 +1062,8 @@ body::-webkit-scrollbar {
     }
 
     .mini-square {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
     }
 
     .manifesto-main p {
@@ -1111,7 +1111,7 @@ body::-webkit-scrollbar {
     }
 
     .logo-col {
-        width: 100%;
+        width: 25vw;
     }
 
     .project-logo {
@@ -1159,11 +1159,11 @@ body::-webkit-scrollbar {
 
     /* ── SEE ALL ── */
     .see-all-projects-section {
-        padding: 32px 0 80px;
+        padding: 100px 0 200px;
     }
 
     /* ── FULLWIDTH PHOTO ── */
     .fullwidth-photo-section {
-        height: 55vw;
+        height: 25vh;
     }
 }
