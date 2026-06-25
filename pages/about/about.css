@@ -358,10 +358,10 @@ body {
 
     .about-tag-wrapper {
         width: 150px;
-        left: auto;
-        right: 0;
-        top: 50%;
-        transform: translate(0, -50%) rotate(1deg);
+        left: 58%;
+        right: auto;
+        top: 75%;
+        transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
     }
 
@@ -433,14 +433,15 @@ body {
         font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Tag — nachodzi na napis "About" od prawej strony */
+    /* Tag — za tytułem, od lewej */
     .about-tag-wrapper {
         display: block;
         width: 130px;
-        left: auto;
-        right: 10px;
-        top: 50%;
-        transform: translate(0, -50%) rotate(1deg);
+        left: 58%;
+        right: auto;
+        top: 75%;
+        transform: translate(0, -30%) rotate(1deg);
+        overflow: visible;
     }
 
     /* Większy margin przed pierwszym akapitem */
