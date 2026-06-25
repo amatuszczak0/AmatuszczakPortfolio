@@ -1,182 +1,227 @@
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@1,2&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scrollbar-width: none; }
+
 body {
-    padding-top: 100px;
-}
-
-/* ###########################################################################
-   NORR HERO
-########################################################################### */
-
-.norr-page {
     background-color: #000;
-    min-height: 100vh;
-    overflow: hidden;
+    color: #F2FDFF;
+    font-family: 'Switzer', sans-serif;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+body::-webkit-scrollbar { display: none; }
+
+.Amatuszczak-page { min-height: 100vh; }
+
+/* ###########################################################################
+   HERO — zdjęcie pełnoekranowe
+########################################################################### */
+
+.brand-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
-.norr-hero {
-    position: relative;
+.brand-hero-parallax {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;        /* wymagane przez parallax */
+}
 
-    display: flex;
-    align-items: flex-start;
+.brand-hero-parallax img {
+    position: absolute;
+    top: -20%;               /* jak w styles.css — przestrzeń na przesunięcie */
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    object-position: center top;
+}
 
-    min-height: calc(100vh - 100px);
-
-    padding-top: 60px;
-
-    /* ← ODSTĘP OD LEWEJ KRAWĘDZI EKRANU */
-    padding-left: 80px;
-
-    /* ← ODSTĘP OD PRAWEJ KRAWĘDZI EKRANU */
-    padding-right: 80px;
+/* Gradient — lewa strona ciemna, prawa odsłonięta */
+.brand-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.58) 0%,
+        rgba(0,0,0,0.22) 55%,
+        rgba(0,0,0,0) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* ###########################################################################
-   LEFT — logo + linia + tekst
+   TAG — pośrodku zdjęcia
 ########################################################################### */
 
-.norr-left {
-    display: flex;
-    flex-direction: column;
-
-    /* ← SZEROKOŚĆ LEWEJ KOLUMNY — zmniejszona, żeby tekst był bliżej zdjęcia */
-    width: 220px;
-    flex-shrink: 0;
-
+.brand-tag {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
     z-index: 2;
+    width: 220px;
+    pointer-events: none;
 }
 
-.norr-brand {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    margin-bottom: 28px;
-}
-
-.norr-logo {
-    /* ← ROZMIAR LOGO (zawiera nazwę "Norr") */
-    width: 160px;
+.brand-tag img {
+    width: 100%;
     height: auto;
+    display: block;
 }
 
-.norr-divider {
-    width: 160px;
-    height: 1px;
-    background-color: #555;
+/* ###########################################################################
+   STORY TEXT — rozciąga się przez hero i czarne tło poniżej
+########################################################################### */
 
-    margin-bottom: 28px;
+.brand-story-wrapper {
+    position: relative;
+    z-index: 3;
+
+    /* Nakłada się na dolną część hero */
+    margin-top: -35vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    align-items: start;
+
+    padding: 0 60px 80px;
+    max-width: 1400px;
+    background: transparent;
 }
 
-.norr-intro {
+.brand-story-left {
     display: flex;
     flex-direction: column;
+    gap: 48px;
+    margin-top: 10vh;
 }
 
-.norr-symbol {
-    font-size: 12px;
-    color: #F2FDFF;
-    display: block;
-    margin-bottom: 10px;
+.brand-story-right {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    /* Prawa kolumna — niżej */
+    margin-top: 30vh;
 }
 
-.norr-text {
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: #F2FDFF;
+.brand-story-wrapper p {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
     margin: 0;
 }
 
 /* ###########################################################################
-   CENTER — can + glow
+   LOGO SECTION
 ########################################################################### */
 
-.norr-center {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.brand-logo-section {
+    padding: 120px 0 100px;
+}
 
+.brand-logo-header {
     display: flex;
     align-items: center;
+    gap: 180px;
+
+    width: 100%;
+
+    border-top: 1px solid #333;
+
+    padding: 100px 0;
+    padding-left: clamp(120px, 14vw, 260px);
+
+    margin-bottom: 100px;
+}
+
+.brand-logo-header span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Główna siatka — wyśrodkowana */
+.brand-logo-grid {
+    display: grid;
+    grid-template-columns: 280px 280px;
+    column-gap: 80px;
     justify-content: center;
-
-    z-index: 1;
+    align-items: start;
 }
 
-.norr-glow {
-    position: absolute;
-
-    /* ← ROZMIAR ŚWIATŁA ZA PUSZKĄ */
-    width: 600px;
-    height: 600px;
-
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
-
-    /* ← POZYCJA ŚWIATŁA — przesunięcie względem środka */
-    transform: translate(40px, -20px);
+/* Lewa kolumna — logo + tekst pod nim */
+.brand-logo-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.norr-can {
-    position: relative;
-
-    /* ← WYSOKOŚĆ PUSZKI */
-    height: 78vh;
-    max-height: 700px;
-
-    object-fit: contain;
-
-    /* ← POZYCJA PUSZKI — przesunięcie od środka ekranu */
-    transform: translateX(60px);
+.brand-logo-img {
+    width: 200px;
+    height: auto;
+    display: block;
 }
 
-/* ###########################################################################
-   RIGHT — tekst przy puszce
-########################################################################### */
 
-.norr-right {
-    position: absolute;
-
-    /* ← POZYCJA TEKSTU PO PRAWEJ — bliżej puszki */
-    right: 220px;
-    top: 55%;
-
-    width: 220px;
-
-    z-index: 2;
+.brand-logo-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 60px;
 }
 
-.norr-right .norr-text {
-    text-align: left;
+.brand-logo-right img {
+    height: 30vw;
+}
+
+.brand-logo-photo {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Akapity — analogicznie do .about-text-block p z about.css */
+.brand-logo-left p,
+.brand-logo-right p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: #fff;
+    max-width: 280px;
+}
+
+.brand-logo-symbol {
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
 }
 
 /* ###########################################################################
    RESPONSIVE
 ########################################################################### */
 
-@media (max-width: 1100px) {
-
-    .norr-hero {
-        flex-direction: column;
-        padding-left: 30px;
-        padding-right: 30px;
-        gap: 60px;
+@media (max-width: 900px) {
+    .brand-story-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 32px 60px;
+        row-gap: 32px;
+        margin-top: -20vh;
     }
+    .brand-story-right { margin-top: 0; }
+    .brand-story-wrapper p { font-size: clamp(18px, 4vw, 24px); }
+}
 
-    .norr-center {
-        position: relative;
-        min-height: 60vh;
-    }
-
-    .norr-can {
-        height: 50vh;
-        transform: none;
-    }
-
-    .norr-right {
-        position: relative;
-        right: auto;
-        top: auto;
-        width: 100%;
-    }
+@media (max-width: 480px) {
+    .brand-story-wrapper { padding: 0 20px 40px; }
+    .brand-story-wrapper p { font-size: clamp(16px, 5vw, 20px); }
 }

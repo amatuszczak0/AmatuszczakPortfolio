@@ -1138,11 +1138,11 @@ body::-webkit-scrollbar {
 
     /* ── PROJECT SEPARATOR ── */
     .project-separator {
-        padding: 40px 0;
+        padding: 100px 0;
     }
 
     .separator-image {
-        max-width: 180px;
+        max-width: 120px;
     }
 
     /* ── PROJECT SECTION 2 ── */

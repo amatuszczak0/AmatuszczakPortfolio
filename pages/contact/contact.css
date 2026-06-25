@@ -265,7 +265,7 @@ body {
         width: 100px;
         left: 40%;
         right: auto;
-        top: 75%;
+        top: 50%;
         transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
     }

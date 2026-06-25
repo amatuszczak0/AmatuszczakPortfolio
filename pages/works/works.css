@@ -342,9 +342,27 @@ body {
 
 @media (max-width: 480px) {
 
+    .works-hero {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Przywracamy marginesy tam, gdzie powinny zostać */
+    .works-title-wrapper,
+    .works-intro,
+    .works-outro {
+        padding-left: 10vw; /* Przywrócenie pierwotnego odstępu */
+        padding-right: 10vw;
+    }
+
+    .works-photo-section {
+        width: 100vw; /* Wymuszenie pełnej szerokości viewportu */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .works-title {
         font-size: clamp(40px, 12vw, 56px);
-        margin-bottom: 10vh;
         margin-left: 5vw;
     }
 
@@ -353,7 +371,7 @@ body {
         width: 100px;
         left: 50%;
         right: auto;
-        top: 25%;
+        top: 50%;
         transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
     }
@@ -365,10 +383,13 @@ body {
 
     .works-photo-section {
         height: 20vh;
+        width: 100%;
     }
+
 
     :root {
         --grid-item-height: 38vh;
+        --grid-gap:         5px;
     }
 
     .works-grid {
@@ -377,7 +398,7 @@ body {
     }
 
     .works-grid-section {
-        padding: 0 4px;
+        padding: 0 5px;
         padding-bottom: 80px;
     }
 }
