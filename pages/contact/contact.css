@@ -90,7 +90,7 @@ body {
 
     width: 180px;
 
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
     z-index: 2;
 }
@@ -233,19 +233,34 @@ body {
         width: 150px;
         left: auto;
         right: 0;
-        top: 50%;
-        transform: translate(0, -50%) rotate(1deg);
+        top: 70%;
+        transform: translate(0, -30%) rotate(1deg);
+        overflow: visible;
     }
 
     .contact-details {
         flex-direction: column;
-        gap: 30px;
-        align-items: flex-start;
-        margin-left: 5vw;
+        gap: 20px;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .contact-link {
         font-size: 24px;
+    }
+
+    .contact-intro {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        max-width: 100%;
+    }
+
+    .contact-intro p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.45;
+        max-width: 100%;
     }
 
     .contact-info-grid {
@@ -253,11 +268,17 @@ body {
         margin-left: 5vw;
         margin-right: 5vw;
     }
+
+    .info-block p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.45;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
 
-    /* Tytuł wrapper — pełna szerokość jak w about */
     .contact-title-wrapper {
         display: block;
         width: calc(100% - 40px);
@@ -270,17 +291,15 @@ body {
         font-size: clamp(40px, 12vw, 56px);
     }
 
-    /* Tag — nachodzi na tytuł od prawej, analogicznie do about */
     .contact-tag-wrapper {
-        display: block;
         width: 130px;
         left: auto;
         right: 10px;
-        top: 50%;
-        transform: translate(0, -50%) rotate(1deg);
+        top: 70%;
+        transform: translate(0, -30%) rotate(1deg);
+        overflow: visible;
     }
 
-    /* Intro — wyrównany do lewej z paddingiem jak akapity w about */
     .contact-intro {
         margin-left: 20px;
         margin-right: 20px;
@@ -294,13 +313,12 @@ body {
         max-width: 100%;
     }
 
-    /* Mail i telefon — jeden pod drugim */
     .contact-details {
         flex-direction: column;
         gap: 20px;
-        align-items: flex-start;
-        margin-left: 20px;
-        margin-right: 20px;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
         margin-top: 40px;
         margin-bottom: 40px;
     }
@@ -309,7 +327,6 @@ body {
         font-size: 20px;
     }
 
-    /* Info grid — jedna kolumna z paddingiem */
     .contact-info-grid {
         grid-template-columns: 1fr;
         margin-left: 20px;
