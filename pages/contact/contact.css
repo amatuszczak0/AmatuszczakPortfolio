@@ -273,10 +273,10 @@ body {
     /* Tag — nachodzi na tytuł od prawej, analogicznie do about */
     .contact-tag-wrapper {
         display: block;
-        width: 130px;
+        width: 100px;
         left: auto;
-        right: 10px;
-        top: 50%;
+        right: 50px;
+        top: 100%;
         transform: translate(0, -50%) rotate(1deg);
     }
 
