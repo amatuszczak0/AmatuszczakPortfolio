@@ -739,10 +739,10 @@ body { padding-top: 100px; overflow-x: hidden; }
     padding-bottom: 100%; /* kwadrat responsywny */
     }
 
-    .norr-swatch__label { font-size: 8px; }
+    .norr-swatch__label { font-size: 6px; }
 
     .norr-swatch__info span:not(.norr-swatch__label) {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     /* ── Logo header (shared) ─────────────────────────────────────────────── */

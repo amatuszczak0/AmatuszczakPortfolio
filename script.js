@@ -252,7 +252,7 @@ const translations = {
 
         RoomPosters_title:  'Plakaty Do Pokoju',
         RoomPosters_intro:  'Projekt serii plakatów powstał podczas odświeżania przestrzeni wokół stanowiska komputerowego. Inspiracją były zimowe krajobrazy, klimat arktyczny oraz niedawny wyjazd w góry. Po umieszczeniu w pokoju nart pojawił się pomysł stworzenia zestawu plakatów, które dopełniłyby ten charakter.',
-        RoomPosters_outro:  'Choć każdy plakat porusza inny temat, podczas projektowania zależało mi na zachowaniu spójnej estetyki i wspólnego klimatu. Dzięki konsekwentnemu wykorzystaniu kolorystyki, kompozycji i stylu graficznego powstała seria prac, która tworzy jednolitą kolekcję i buduje wyrazisty charakter całej przestrzeni.',
+        RoomPosters_outro:  'Choć każdy plakat porusza inny temat, podczas projektowania zależało mi na zachowaniu spójnej estetyki i wspólnego klimatu. Dzięki konsekwentnemu wykorzystaniu kolorystyki, kompozycji i stylu graficznego powstała seria prac, która tworzy jednolitą kolekcję.',
  
         RoomPosters_everest_title: 'Everest',
         RoomPosters_everest_p1:  'Plakat przedstawia alpinistę podczas wspinaczki wysokogórskiej. Centralnym elementem kompozycji jest czekan z logo „Hundred Bands", nawiązujący do albumu o tej samej nazwie.',
@@ -274,11 +274,11 @@ const translations = {
 
         // NORR
 
-        norr_left_text:          'Norr czerpie z charakteru północy. To nie tylko inspiracja wizualna, ale przede wszystkim podejście oparte na funkcjonalności, wytrzymałości i świadomym projektowaniu.',
+        norr_left_text:          'Norr to marka energetyków czerpiąca z charakteru północy. To oparte jest na funkcjonalności, wytrzymałości i świadomym projektowaniu.',
         norr_right_text:         'Produkty Norr są stworzone z myślą o zimie, ruchu i osiągach w niskich temperaturach.',
         norr_vi_title:           'Identyfikacja Wizualna',
-        norr_vi_p1:              'System kolorystyczny Norr opiera się na prostocie inspirowanej Arktyką, gdzie dominują biel, mgła i ograniczona paleta barw. Jasne odcienie bieli i szarości stanowią fundament identyfikacji, tworząc poczucie przestrzeni, spokoju i porządku. Nie są jedynie tłem, lecz aktywnym elementem organizującym i prowadzącym komunikację wizualną.',
-        norr_vi_p2:              'Ciemne kolory, inspirowane arktycznym morzem i nocą polarną, wprowadzają kontrast, głębię i hierarchię. Stosowane w przemyślany sposób podkreślają najważniejsze elementy oraz wzmacniają kompozycję. Relacja między światłem a ciemnością odzwierciedla sam arktyczny krajobraz, w którym rozległą jasność przełamują wyraziste i mocne akcenty.',
+        norr_vi_p1:              'System kolorystyczny Norr opiera się na prostocie inspirowanej Arktyką, gdzie dominują biel, mgła i ograniczona paleta barw. Jasne odcienie bieli i szarości stanowią fundament identyfikacji, tworząc poczucie przestrzeni, spokoju i porządku.',
+        norr_vi_p2:              'Ciemne kolory, inspirowane arktycznym morzem i nocą, wprowadzają kontrast, głębię i hierarchię. Stosowane w przemyślany sposób podkreślają najważniejsze elementy oraz wzmacniają kompozycję. Relacja między bielą a ciemnością odzwierciedla sam arktyczny krajobraz.',
         norr_logo_desc_left:     'Logo to kierunek, energia i cel.',
         norr_logo_right_text_1:  'Logo Norr zostało oparte na uproszczonej igle kompasu wskazującej północ. Symbolizuje kierunek, koncentrację i jasno określony cel. Minimalistyczna forma nawiązuje do nawigacji, zachowując jednocześnie nowoczesny i czytelny charakter.',
         norr_logo_right_text_2:  'Jednocześnie znak przypomina błyskawicę, symbol energii, siły i dynamicznego ruchu. Połączenie tych elementów odzwierciedla tożsamość marki Norr, łącząc precyzję, stabilność i intensywność w jednym, spójnym symbolu.',
