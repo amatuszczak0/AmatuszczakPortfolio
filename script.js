@@ -75,7 +75,7 @@ const translations = {
 
         // PROJECTS (index)
         projects_title:  'Projects',
-        project1_desc:   'Streetwear and snowboard brand focused on calm, cold aesthetics. The project reflects my approach to design — minimal, clean, and built around atmosphere over loud visuals.',
+        project1_desc:   'Hundread Bars is a streetwear brand inspired by snowboard culture and street art aesthetics.',
         see_all_projects: 'See All Projects →',
 
         // ABOUT
@@ -128,7 +128,7 @@ const translations = {
         // ROOM POSTERS
         RoomPosters_title: 'Room Posters',
         RoomPosters_intro:       'This poster series was created while redesigning the space around my computer workstation. The main sources of inspiration were winter landscapes, Arctic aesthetics, and a recent trip to the mountains. After mounting a pair of skis on the wall, I decided to create a set of posters that would complement and enhance the atmosphere of the space.',
-        RoomPosters_outro:       'Although each poster explores a different subject, maintaining a consistent visual language across the series was a key objective. Through the deliberate use of color, composition, and graphic style, the project evolved into a cohesive collection that establishes a distinct identity and reinforces the overall character of the environment.',
+        RoomPosters_outro:       'Although each poster explores a different subject, maintaining a consistent visual language across the series was a key objective. Through the deliberate use of color, composition, and graphic style, the project evolved into a collection that establishes a distinct identity.',
  
         RoomPosters_everest_title: 'Everest',
         RoomPosters_everest_p1:  'The poster depicts a mountaineer during a high-altitude ascent. At the center of the composition is an ice axe featuring the "Hundred Bands" logo, referencing the album of the same name.',
@@ -145,16 +145,16 @@ const translations = {
     
         // HUNDRED BEARS
 
-        HundredBears_desc:        'Streetwear and snowboard brand focused on calm, cold aesthetics. The project reflects my approach to design — minimal, clean, and built around atmosphere over loud visuals. Inspired by winter landscapes and street culture, combining simplicity with a strong visual identity.',
+        HundredBears_desc:        'Hundread Bars is a streetwear brand inspired by snowboard culture and street art aesthetics. It combines a raw, urban identity with a cold, arctic atmosphere. The project also serves as my creative space for experimenting with new ideas, graphics, and design concepts.',
         HundredBears_coming_soon: 'Coming Soon',
 
         // NORR
 
-        norr_left_text:          'Norr is a brand shaped by the logic of the Arctic. Not only as an aesthetic theme, not as a marketing story, but as a way of thinking and functionality.',
-        norr_right_text:         'We create products connected to winter, movement, and performance in cold conditions.',
+        norr_left_text:          'Norr is an energy drink brand shaped by the logic of the Arctic. Not only as an aesthetic theme but as a way of thinking and functionality.',
+        norr_right_text:         'Norr products are connected to winter, movement, and performance in cold conditions.',
         norr_vi_title:           'Visual Identity',
-        norr_vi_p1:              'The Norr color system is built on reduction, inspired by the Arctic, where white, mist, and a limited palette dominate. Light shades of white and grey form the foundation, creating calm, space, and a clean structure. They are not empty backgrounds but active elements that organize and guide the visual message.',
-        norr_vi_p2:              'Dark colors, inspired by the Arctic sea and polar night, introduce contrast, depth, and hierarchy. Used selectively, they highlight the most important elements and strengthen the overall composition. The relationship between light and darkness reflects the Arctic landscape itself, where vast brightness is interrupted by bold and distinctive accents.',
+        norr_vi_p1:              'The Norr color system is built on reduction, inspired by the Arctic, where white, mist, and a limited palette dominate. Light shades of white and grey form the foundation, creating calm, space, and a clean structure.',
+        norr_vi_p2:              'Dark colors, inspired by the Arctic sea and polar night, introduce contrast, depth, and hierarchy. Used selectively, they highlight the most important elements and strengthen the overall composition. The relationship between light and darkness reflects the Arctic landscape itself.',
         norr_logo_desc_left:     'The logo reflects direction, energy, and purpose.',
         norr_logo_right_text_1:  'The Norr logo is built on a simplified compass needle pointing north, symbolizing direction, focus, and a clear sense of purpose. Its minimal form subtly references navigation while maintaining a clean and modern appearance.',
         norr_logo_right_text_2:  'At the same time, the shape resembles a lightning bolt, representing energy, power, and dynamic movement. Together, these elements reflect Norr\'s identity as an energy drink brand, combining precision, stability, and intensity in a single mark.',
@@ -198,7 +198,7 @@ const translations = {
 
         // PROJECTS (index)
         projects_title:  'Projekty',
-        project1_desc:   'Marka streetwearowa i snowboardowa skupiona na spokojnej, zimnej estetyce. Projekt odzwierciedla moje podejście do designu — minimalistyczne, czyste i zbudowane wokół atmosfery.',
+        project1_desc:   'Hundread Bars to streetwearowa marka odzieżowa inspirowana kulturą snowboardową i estetyką street artu. ',
         see_all_projects: 'Zobacz wszystkie projekty →',
 
         // ABOUT
@@ -269,7 +269,7 @@ const translations = {
     
         // HUNDRED BEARS
 
-        HundredBears_desc:        'Marka streetwearowa i snowboardowa skupiona na spokojnej, zimnej estetyce. Projekt odzwierciedla moje podejście do designu — minimalistyczne, czyste i zbudowane wokół atmosfery. Inspirowane zimowymi krajobrazami i kulturą uliczną, łączące prostotę z silną identyfikacją wizualną.',
+        HundredBears_desc:        'Hundread Bars to streetwearowa marka odzieżowa inspirowana kulturą snowboardową i estetyką street artu. Łączy surowy, miejski charakter z zimowym i arktycznym klimatem. Projekt stanowi również moją kreatywną przestrzeń do eksperymentowania z nowymi pomysłami, grafikami i koncepcjami,',
         HundredBears_coming_soon: 'Wkrótce',
 
         // NORR

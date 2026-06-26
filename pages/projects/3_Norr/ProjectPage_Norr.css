@@ -446,6 +446,8 @@ body { padding-top: 100px; overflow-x: hidden; }
     display: block;
 }
 
+
+
 .norr-flavors-overlay {
     position: absolute;
     inset: 0;
@@ -654,6 +656,9 @@ body { padding-top: 100px; overflow-x: hidden; }
         width: 100%;
     }
 
+    /* Flavors — zamiana zdjęcia na mobilne */
+    .norr-flavors-bg img { object-position: center; }
+
     /* Flavors — padding poprawiony */
     .norr-flavors-text {
         padding: 60px 5vw;
@@ -785,7 +790,7 @@ body { padding-top: 100px; overflow-x: hidden; }
         padding: 20px 0;
     }
 
-    :root { --logo-variant-height: 44px; }
+    :root { --logo-variant-height: 35px; }
 
     .norr-logo-variant__img {
         height: 72px;
@@ -793,8 +798,8 @@ body { padding-top: 100px; overflow-x: hidden; }
     }
 
     .norr-logo-variant__title {
-        font-size: 12px;
-        margin-bottom: 0;
+        font-size: 8px;
+        margin-bottom: 50px;
     }
 
     /* Opisy wariantów — stos pionowy, pełna szerokość */
@@ -858,7 +863,7 @@ body { padding-top: 100px; overflow-x: hidden; }
     }
 
     .norr-typo-center p {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.4;
         white-space: nowrap;
         overflow: hidden;

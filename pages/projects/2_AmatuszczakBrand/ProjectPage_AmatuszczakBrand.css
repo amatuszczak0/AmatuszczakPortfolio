@@ -207,10 +207,103 @@ body::-webkit-scrollbar { display: none; }
 }
 
 /* ###########################################################################
+   PORTFOLIO SECTION
+########################################################################### */
+
+.brand-portfolio-section {
+    padding: 120px 0 0;
+}
+
+.brand-portfolio-header {
+    display: flex;
+    align-items: center;
+    gap: 180px;
+
+    width: 100%;
+
+    border-top: 1px solid #333;
+
+    padding: 100px 0;
+    padding-left: clamp(120px, 14vw, 260px);
+
+    margin-bottom: 100px;
+}
+
+.brand-portfolio-header span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.brand-portfolio-grid {
+    display: grid;
+    grid-template-columns: 280px 280px;
+    column-gap: 80px;
+    justify-content: center;
+    align-items: start;
+
+    margin-bottom: 100px;
+}
+
+.brand-portfolio-left,
+.brand-portfolio-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.brand-portfolio-right {
+    margin-top: 60px;
+}
+
+.brand-portfolio-grid--bottom {
+    margin-top: 100px;
+}
+
+.brand-portfolio-left p,
+.brand-portfolio-right p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: #fff;
+    max-width: 280px;
+}
+
+/* Zdjęcie strony z paralaksem */
+.brand-website-view {
+    width: min(900px, 88vw);
+    height: 560px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-website-parallax {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.brand-website-parallax img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 140%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+/* ###########################################################################
    RESPONSIVE
 ########################################################################### */
 
+/* ── 900px ───────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
+
+    /* Story */
     .brand-story-wrapper {
         grid-template-columns: 1fr;
         padding: 0 32px 60px;
@@ -219,9 +312,109 @@ body::-webkit-scrollbar { display: none; }
     }
     .brand-story-right { margin-top: 0; }
     .brand-story-wrapper p { font-size: clamp(18px, 4vw, 24px); }
+
+    /* Logo grid */
+    .brand-logo-grid {
+        grid-template-columns: 1fr;
+        padding: 0 32px;
+        row-gap: 40px;
+    }
+    .brand-logo-right { margin-top: 0; }
+    .brand-logo-left p,
+    .brand-logo-right p { max-width: 100%; }
+
+    /* Portfolio grid */
+    .brand-portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 0 32px;
+        row-gap: 32px;
+    }
+    .brand-portfolio-right { margin-top: 0; }
+    .brand-portfolio-left p,
+    .brand-portfolio-right p {
+        max-width: 100%;
+        font-size: clamp(15px, 3.5vw, 18px);
+    }
+
+    /* Website view */
+    .brand-website-view {
+        height: 400px;
+    }
 }
 
+/* ── 768px ───────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .brand-tag { width: 160px; }
+
+    /* Story */
+    .brand-story-wrapper {
+        padding: 0 24px 48px;
+        margin-top: -15vh;
+        column-gap: 0;
+    }
+    .brand-story-wrapper p { font-size: clamp(16px, 4.5vw, 22px); }
+
+    /* Logo header */
+    .brand-logo-header {
+        gap: 40px;
+        padding: 60px 0 60px 24px;
+        margin-bottom: 48px;
+    }
+
+    /* Logo grid */
+    .brand-logo-grid { padding: 0 24px; }
+    .brand-logo-right img { height: 50vw; }
+
+    /* Portfolio header */
+    .brand-portfolio-header {
+        gap: 40px;
+        padding: 60px 0 60px 24px;
+        margin-bottom: 48px;
+    }
+
+    /* Portfolio grid */
+    .brand-portfolio-grid { padding: 0 24px; }
+    .brand-portfolio-grid--bottom { margin-top: 48px; }
+
+    /* Website view */
+    .brand-website-view { height: 52vw; }
+}
+
+/* ── 480px ───────────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
-    .brand-story-wrapper { padding: 0 20px 40px; }
+
+    /* Story */
+    .brand-story-wrapper {
+        padding: 0 20px 40px;
+        margin-top: -10vh;
+    }
     .brand-story-wrapper p { font-size: clamp(16px, 5vw, 20px); }
+
+    /* Logo */
+    .brand-logo-section { padding: 60px 0 60px; }
+    .brand-logo-header {
+        gap: 24px;
+        padding: 40px 0 40px 20px;
+        margin-bottom: 32px;
+    }
+    .brand-logo-grid { padding: 0 20px; }
+    .brand-logo-img { width: 140px; }
+    .brand-logo-right img { height: 60vw; }
+
+    /* Portfolio */
+    .brand-portfolio-section { padding: 60px 0 0; }
+    .brand-portfolio-header {
+        gap: 24px;
+        padding: 40px 0 40px 20px;
+        margin-bottom: 32px;
+    }
+    .brand-portfolio-grid { padding: 0 20px; }
+    .brand-portfolio-grid--bottom { margin-top: 32px; }
+    .brand-portfolio-left p,
+    .brand-portfolio-right p { font-size: 16px; }
+
+    /* Website view */
+    .brand-website-view { height: 60vw; }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room Posters — AMatuszczak</title>
+    <title>Maserati Catalogue — AMatuszczak</title>
     <link rel="stylesheet" href="../../../styles.css">
     <link rel="stylesheet" href="../../footer/footer.css">
     <link rel="stylesheet" href="ProjectPage_MaseratiCatalogue.css">
@@ -29,104 +29,126 @@
 
     <main>
 
+        <!-- ── Hero / intro ──────────────────────────────────────────────── -->
         <section class="project-hero">
 
             <div class="project-title-wrapper">
-                <h1 class="project-title" data-i18n="RoomPosters_title">Room Posters</h1>
+                <h1 class="project-title">Maserati Catalogue</h1>
             </div>
 
             <div class="project-intro">
                 <span class="project-symbol">⁙</span>
-                <p data-i18n="RoomPosters_intro">
-                    This poster series was created while redesigning
-                    the space around my computer workstation. The
-                    main sources of inspiration were winter
-                    landscapes, Arctic aesthetics, and a recent trip
-                    to the mountains. After mounting a pair of skis
-                    on the wall, I decided to create a set of posters
-                    that would complement and enhance the atmosphere
-                    of the space.
-                </p>
-            </div>
-
-            <div class="project-photo-section">
-                <div class="project-photo-parallax parallax-img">
-                    <img src="../../../assets/projects/4_RoomPosters/Photo1.webp" alt="Room Posters — main photo" class="project-photo-img">
-                </div>
-            </div>
-
-            <div class="project-outro">
-                <p data-i18n="RoomPosters_outro">
-                    Although each poster explores a different subject,
-                    maintaining a consistent visual language across the
-                    series was a key objective. Through the deliberate
-                    use of color, composition, and graphic style, the
-                    project evolved into a cohesive collection that
-                    establishes a distinct identity and reinforces the
-                    overall character of the environment.
+                <p>
+                    Some text Some text Some text Some text Some text Some text
+                    Some text Some text Some text Some text Some text Some text
+                    Some text Some text Some text Some text Some text Some text
+                    Some text Some text Some text Some text Some text Some text
+                    Some text Some text.
                 </p>
             </div>
 
         </section>
 
-        <section class="posters-section">
+        <!-- ── Catalogue carousel ────────────────────────────────────────── -->
+        <section class="catalogue-section">
 
-            <!-- EVEREST -->
-            <article class="poster-entry poster-entry--left">
-                <div class="poster-entry__image poster-hover">
-                    <img src="../../../assets/projects/4_RoomPosters/posters/Poster_Everest.webp" alt="Everest poster">
-                </div>
-                <div class="poster-entry__content">
-                    <h2 class="poster-entry__title" data-i18n="RoomPosters_everest_title">Everest</h2>
-                    <div class="poster-entry__body">
-                        <div class="poster-entry__text-block">
-                            <div class="poster-entry__text-col">
-                                <p data-i18n="RoomPosters_everest_p1">The poster depicts a mountaineer during a high-altitude ascent. At the center of the composition is an ice axe featuring the "Hundred Bands" logo, referencing the album of the same name. The main headline, "I just wanted to reach peaks like Everest," is taken from the song Everest by Żeamsome and Gedz, released in 2019 on the Hundred Bands album.</p>
-                                <p data-i18n="RoomPosters_everest_p2">The main headline, "I just wanted to reach peaks like Everest," is taken from the song Everest by Żeamsome and Gedz, released in 2019 on the Hundred Bands album.</p>
-                            </div>
-                            <img class="poster-entry__inline-img" src="../../../assets/projects/4_RoomPosters/EverestSongScreen.png" alt="Everest song screen">
-                        </div>
-                        <p data-i18n="RoomPosters_everest_p3">The project was created as a visual interpretation of ambition, perseverance, and overcoming personal limitations. Its raw monochromatic aesthetic and pronounced grain give the piece the appearance of archival mountain photography. The distorted "EVEREST" logotype serves as the dominant typographic element, emphasizing the intensity of the climb, the challenges involved, and the monumental nature of the mountain itself.</p>
-                    </div>
-                </div>
-            </article>
+            <div class="catalogue-wrapper">
 
-            <!-- SALOMON STREETRACER -->
-            <article class="poster-entry poster-entry--right">
-                <div class="poster-entry__content">
-                    <h2 class="poster-entry__title" data-i18n="RoomPosters_salomon_title">Salomon Streetracer</h2>
-                    <div class="poster-entry__top-row">
-                        <div class="poster-entry__image poster-entry__image--small">
-                            <img src="../../../assets/projects/4_RoomPosters/StreetracerPhoto.png" alt="Salomon Streetracer skis">
-                        </div>
-                        <p data-i18n="RoomPosters_salomon_p1">This poster was created as a graphic interpretation of the design language of the Salomon Streetracer skis, which are displayed as part of my room's interior. The distinctive styling of this early-2000s model served as the starting point for a project that combines winter sports aesthetics with a contemporary graphic approach.</p>
-                    </div>
-                    <p data-i18n="RoomPosters_salomon_p2">The central section of the composition features a mountain landscape overlaid with an enlarged, pixelated Salomon logo. The upper portion of the poster draws inspiration from the markings and details found directly on the skis, including the characteristic "Streetracer" lettering, which functions as the primary typographic element.</p>
-                </div>
-                <div class="poster-entry__image poster-entry__image--large poster-hover">
-                    <img src="../../../assets/projects/4_RoomPosters/posters/poster_SalomonStreetracer.webp" alt="Salomon Streetracer poster">
-                </div>
-            </article>
+                <!-- Strzałka wstecz -->
+                <button class="catalogue-arrow catalogue-arrow--prev" id="prevBtn" aria-label="Previous page">
+                    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
 
-            <!-- JUST ONE STEP AHEAD -->
-            <article class="poster-entry poster-entry--left">
-                <div class="poster-entry__image poster-hover">
-                    <img src="../../../assets/projects/4_RoomPosters/posters/Poster_JustOneStepAhead.webp" alt="Just One Step Ahead poster">
+            <div class="catalogue-stage" id="catalogueStage">
+
+                <!-- Slajdy — podmień src na właściwe ścieżki do .webp z przezroczystym tłem -->
+                <div class="catalogue-slide active">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page01.webp" alt="Maserati Catalogue — page 1">
                 </div>
-                <div class="poster-entry__content">
-                    <h2 class="poster-entry__title" data-i18n="RoomPosters_josa_title">Just One Step Ahead</h2>
-                    <div class="poster-entry__body">
-                        <p data-i18n="RoomPosters_josa_p1">"Just One Step Ahead" was the first poster created in the series. From the beginning, the concept was simple: to produce a winter-themed design using a minimal number of visual elements. The final composition is built around two dark silhouettes making their way through a snow-covered landscape in harsh weather conditions.</p>
-                        <p data-i18n="RoomPosters_josa_p2">The large amount of negative space emphasizes the severity of the environment and a sense of isolation, while directing attention toward the figures and the message placed above them. The phrase "Just One Step Ahead" serves as the central idea of the project, expressing the belief that even the smallest consistent efforts can lead to significant achievements over time.</p>
-                    </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page02.webp" alt="Maserati Catalogue — page 2">
                 </div>
-            </article>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page03.webp" alt="Maserati Catalogue — page 3">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page04.webp" alt="Maserati Catalogue — page 4">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page05.webp" alt="Maserati Catalogue — page 5">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page06.webp" alt="Maserati Catalogue — page 6">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page07.webp" alt="Maserati Catalogue — page 7">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page08.webp" alt="Maserati Catalogue — page 8">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page09.webp" alt="Maserati Catalogue — page 9">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page10.webp" alt="Maserati Catalogue — page 10">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page11.webp" alt="Maserati Catalogue — page 11">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page12.webp" alt="Maserati Catalogue — page 12">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page13.webp" alt="Maserati Catalogue — page 13">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page14.webp" alt="Maserati Catalogue — page 14">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page15.webp" alt="Maserati Catalogue — page 15">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page16.webp" alt="Maserati Catalogue — page 16">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page17.webp" alt="Maserati Catalogue — page 17">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page18.webp" alt="Maserati Catalogue — page 18">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page19.webp" alt="Maserati Catalogue — page 19">
+                </div>
+                <div class="catalogue-slide">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page20.webp" alt="Maserati Catalogue — page 20">
+                </div>
+
+            </div><!-- /.catalogue-stage -->
+
+                <!-- Strzałka wprzód -->
+                <button class="catalogue-arrow catalogue-arrow--next" id="nextBtn" aria-label="Next page">
+                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+
+            </div><!-- /.catalogue-wrapper -->
+
+            <!-- ── Slider ─────────────────────────────────────────────── -->
+            <div class="catalogue-slider">
+                <span class="slider-num slider-num--current" id="sliderCurrent">01</span>
+
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slider-fill" id="sliderFill"></div>
+                    <div class="slider-segments" id="sliderSegments"></div>
+                </div>
+
+                <span class="slider-num" id="sliderTotal">20</span>
+            </div>
 
         </section>
 
     </main>
 
-<footer class="footer" id="footer">
+    <footer class="footer" id="footer">
 
         <div class="footer-top">
             <div class="footer-year">[ 2026 Amatuszczak ]</div>
@@ -136,7 +158,6 @@
         <div class="footer-line"></div>
 
         <div class="footer-main">
-
             <div class="footer-left">
                 <h2 class="footer-title" data-i18n="footer_title">Get In Touch</h2>
                 <div class="footer-contact">
@@ -165,10 +186,81 @@
                     <a href="https://www.facebook.com/profile.php?id=100090816840774&locale=pl_PL">Antek Matuszczak</a>
                 </div>
             </div>
-
         </div>
 
     </footer>
+
+    <script>
+        (function () {
+            const slides   = document.querySelectorAll('.catalogue-slide');
+            const fill     = document.getElementById('sliderFill');
+            const current  = document.getElementById('sliderCurrent');
+            const total    = document.getElementById('sliderTotal');
+            const segments = document.getElementById('sliderSegments');
+            const total_n  = slides.length;
+            let   active   = 0;
+            let   animating = false;
+
+            total.textContent = String(total_n).padStart(2, '0');
+
+            for (let i = 0; i < total_n; i++) {
+                const seg = document.createElement('div');
+                seg.className = 'slider-segment';
+                seg.addEventListener('click', () => goTo(i));
+                segments.appendChild(seg);
+            }
+
+            function goTo(index) {
+                if (animating) return;
+                const next = (index + total_n) % total_n;
+                if (next === active) return;
+                animating = true;
+
+                const outEl = slides[active];
+                const inEl  = slides[next];
+
+                outEl.classList.add('slide-exit');
+
+                inEl.style.display = 'flex';
+                inEl.classList.add('slide-enter');
+
+                outEl.addEventListener('animationend', function onOut() {
+                    outEl.removeEventListener('animationend', onOut);
+                    outEl.style.display = 'none';
+                    outEl.classList.remove('slide-exit');
+                }, { once: true });
+
+                inEl.addEventListener('animationend', function onIn() {
+                    inEl.removeEventListener('animationend', onIn);
+                    inEl.classList.remove('slide-enter');
+                    animating = false;
+                }, { once: true });
+
+                active = next;
+                current.textContent = String(active + 1).padStart(2, '0');
+                fill.style.width = ((active + 1) / total_n * 100) + '%';
+            }
+
+            // Inicjalizacja
+            slides[0].style.display = 'flex';
+
+            document.getElementById('prevBtn').addEventListener('click', () => goTo(active - 1));
+            document.getElementById('nextBtn').addEventListener('click', () => goTo(active + 1));
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft')  goTo(active - 1);
+                if (e.key === 'ArrowRight') goTo(active + 1);
+            });
+
+            let startX = 0;
+            const stage = document.getElementById('catalogueStage');
+            stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            stage.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) goTo(diff > 0 ? active + 1 : active - 1);
+            });
+        })();
+    </script>
 
 </body>
 </html>
