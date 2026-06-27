@@ -174,6 +174,11 @@ const translations = {
         norr_flavor2_desc:       'Pure energy without sugar, created for those who want maximum stimulation without compromise.',
         norr_flavor3_title:      'Cold Mint',
         norr_flavor3_desc:       'An intensely fresh, minty flavor that instantly refreshes and energizes.',
+
+        // MASERATI CATALOGUE
+        maserati_title: 'Maserati Catalogue',
+        maserati_intro: "The Maserati catalog is one of my print design projects, created to reflect the brand's elegant and luxurious character. The project was developed with careful attention to layout, typography, and color palette, resulting in an aesthetically refined publication that highlights the brand's prestige and the premium quality of the showcased vehicles.",
+
     },
 
     pl: {
@@ -298,6 +303,9 @@ const translations = {
         norr_flavor2_desc:       'Czysta energia bez cukru, stworzona dla tych, którzy chcą maksymalnej stymulacji bez kompromisów.',
         norr_flavor3_title:      'Cold Mint',
         norr_flavor3_desc:       'Intensywnie świeży, miętowy smak, który natychmiastowo orzeźwia i dodaje energii.',
+
+        maserati_title: 'Katalog Maserati',
+        maserati_intro: 'Katalog marki Maserati to jeden z moich projektów poligraficznych, którego celem było oddanie eleganckiego i luksusowego charakteru marki. Projekt opracowałem z dbałością o spójny układ, typografię oraz kolorystykę, tworząc estetyczną publikację, która podkreśla prestiż marki i wysoką jakość prezentowanych samochodów.',
     
     }
 };

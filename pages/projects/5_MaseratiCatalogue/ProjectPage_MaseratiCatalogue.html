@@ -29,121 +29,35 @@
 
     <main>
 
-        <!-- ── Hero / intro ──────────────────────────────────────────────── -->
         <section class="project-hero">
-
             <div class="project-title-wrapper">
-                <h1 class="project-title">Maserati Catalogue</h1>
+                <h1 class="project-title" data-i18n="maserati_title">Maserati Catalogue</h1>
             </div>
-
-            <div class="project-intro">
-                <span class="project-symbol">⁙</span>
-                <p>
-                    Some text Some text Some text Some text Some text Some text
-                    Some text Some text Some text Some text Some text Some text
-                    Some text Some text Some text Some text Some text Some text
-                    Some text Some text Some text Some text Some text Some text
-                    Some text Some text.
-                </p>
+            <div class="project-hero-body">
+                <div class="project-intro">
+                    <span class="project-symbol">⁙</span>
+                    <p data-i18n="maserati_intro">
+                        intro
+                    </p>
+                </div>
+                <div class="project-hero-img">
+                    <img src="../../../assets/projects/5_MaseratiCatalogue/Photo1.webp" alt="Maserati Catalogue cover">
+                </div>
             </div>
-
         </section>
 
-        <!-- ── Catalogue carousel ────────────────────────────────────────── -->
-        <section class="catalogue-section">
-
-            <div class="catalogue-wrapper">
-
-                <!-- Strzałka wstecz -->
-                <button class="catalogue-arrow catalogue-arrow--prev" id="prevBtn" aria-label="Previous page">
-                    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-
-            <div class="catalogue-stage" id="catalogueStage">
-
-                <!-- Slajdy — podmień src na właściwe ścieżki do .webp z przezroczystym tłem -->
-                <div class="catalogue-slide active">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page01.webp" alt="Maserati Catalogue — page 1">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page02.webp" alt="Maserati Catalogue — page 2">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page03.webp" alt="Maserati Catalogue — page 3">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page04.webp" alt="Maserati Catalogue — page 4">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page05.webp" alt="Maserati Catalogue — page 5">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page06.webp" alt="Maserati Catalogue — page 6">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page07.webp" alt="Maserati Catalogue — page 7">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page08.webp" alt="Maserati Catalogue — page 8">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page09.webp" alt="Maserati Catalogue — page 9">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page10.webp" alt="Maserati Catalogue — page 10">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page11.webp" alt="Maserati Catalogue — page 11">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page12.webp" alt="Maserati Catalogue — page 12">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page13.webp" alt="Maserati Catalogue — page 13">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page14.webp" alt="Maserati Catalogue — page 14">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page15.webp" alt="Maserati Catalogue — page 15">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page16.webp" alt="Maserati Catalogue — page 16">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page17.webp" alt="Maserati Catalogue — page 17">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page18.webp" alt="Maserati Catalogue — page 18">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page19.webp" alt="Maserati Catalogue — page 19">
-                </div>
-                <div class="catalogue-slide">
-                    <img src="../../../assets/projects/5_MaseratiCatalogue/Page20.webp" alt="Maserati Catalogue — page 20">
-                </div>
-
-            </div><!-- /.catalogue-stage -->
-
-                <!-- Strzałka wprzód -->
-                <button class="catalogue-arrow catalogue-arrow--next" id="nextBtn" aria-label="Next page">
-                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-
-            </div><!-- /.catalogue-wrapper -->
-
-            <!-- ── Slider ─────────────────────────────────────────────── -->
-            <div class="catalogue-slider">
-                <span class="slider-num slider-num--current" id="sliderCurrent">01</span>
-
-                <div class="slider-track" id="sliderTrack">
-                    <div class="slider-fill" id="sliderFill"></div>
-                    <div class="slider-segments" id="sliderSegments"></div>
-                </div>
-
-                <span class="slider-num" id="sliderTotal">20</span>
+        <section class="catalogue-grid-section">
+            <div class="catalogue-grid">
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page01.webp" alt="Page 1"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page02.webp" alt="Page 2"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page03.webp" alt="Page 3"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page04.webp" alt="Page 4"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page05.webp" alt="Page 5"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page06.webp" alt="Page 6"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page07.webp" alt="Page 7"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page08.webp" alt="Page 8"></div>
+                <div class="catalogue-grid-item"><img src="../../../assets/projects/5_MaseratiCatalogue/Page09.webp" alt="Page 9"></div>
             </div>
-
         </section>
 
     </main>
@@ -189,78 +103,6 @@
         </div>
 
     </footer>
-
-    <script>
-        (function () {
-            const slides   = document.querySelectorAll('.catalogue-slide');
-            const fill     = document.getElementById('sliderFill');
-            const current  = document.getElementById('sliderCurrent');
-            const total    = document.getElementById('sliderTotal');
-            const segments = document.getElementById('sliderSegments');
-            const total_n  = slides.length;
-            let   active   = 0;
-            let   animating = false;
-
-            total.textContent = String(total_n).padStart(2, '0');
-
-            for (let i = 0; i < total_n; i++) {
-                const seg = document.createElement('div');
-                seg.className = 'slider-segment';
-                seg.addEventListener('click', () => goTo(i));
-                segments.appendChild(seg);
-            }
-
-            function goTo(index) {
-                if (animating) return;
-                const next = (index + total_n) % total_n;
-                if (next === active) return;
-                animating = true;
-
-                const outEl = slides[active];
-                const inEl  = slides[next];
-
-                outEl.classList.add('slide-exit');
-
-                inEl.style.display = 'flex';
-                inEl.classList.add('slide-enter');
-
-                outEl.addEventListener('animationend', function onOut() {
-                    outEl.removeEventListener('animationend', onOut);
-                    outEl.style.display = 'none';
-                    outEl.classList.remove('slide-exit');
-                }, { once: true });
-
-                inEl.addEventListener('animationend', function onIn() {
-                    inEl.removeEventListener('animationend', onIn);
-                    inEl.classList.remove('slide-enter');
-                    animating = false;
-                }, { once: true });
-
-                active = next;
-                current.textContent = String(active + 1).padStart(2, '0');
-                fill.style.width = ((active + 1) / total_n * 100) + '%';
-            }
-
-            // Inicjalizacja
-            slides[0].style.display = 'flex';
-
-            document.getElementById('prevBtn').addEventListener('click', () => goTo(active - 1));
-            document.getElementById('nextBtn').addEventListener('click', () => goTo(active + 1));
-
-            document.addEventListener('keydown', e => {
-                if (e.key === 'ArrowLeft')  goTo(active - 1);
-                if (e.key === 'ArrowRight') goTo(active + 1);
-            });
-
-            let startX = 0;
-            const stage = document.getElementById('catalogueStage');
-            stage.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-            stage.addEventListener('touchend', e => {
-                const diff = startX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) goTo(diff > 0 ? active + 1 : active - 1);
-            });
-        })();
-    </script>
 
 </body>
 </html>
