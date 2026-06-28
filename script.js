@@ -580,3 +580,81 @@ document.addEventListener("scroll", updateParallax);
 
 // Wywołaj od razu przy załadowaniu, żeby uniknąć skoku przy pierwszym scrollu
 updateParallax();
+// ###########################################################################
+//   LIGHTBOX — Maserati Catalogue
+// ###########################################################################
+
+(function () {
+    const overlay  = document.getElementById('lightbox');
+    if (!overlay) return;
+
+    const img      = document.getElementById('lightbox-img');
+    const btnClose = document.getElementById('lightbox-close');
+    const btnPrev  = document.getElementById('lightbox-prev');
+    const btnNext  = document.getElementById('lightbox-next');
+    const counter  = document.getElementById('lightbox-counter');
+
+    const items = Array.from(document.querySelectorAll('.catalogue-grid-item img'));
+    let current = 0;
+
+    function open(index) {
+        current = index;
+        update();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    function update() {
+        img.src = items[current].src;
+        img.alt = items[current].alt;
+        counter.textContent = (current + 1) + ' / ' + items.length;
+    }
+
+    function prev() {
+        current = (current - 1 + items.length) % items.length;
+        update();
+    }
+
+    function next() {
+        current = (current + 1) % items.length;
+        update();
+    }
+
+    items.forEach(function (el, i) {
+        el.parentElement.addEventListener('click', function (e) {
+            e.preventDefault();
+            open(i);
+        });
+    });
+
+    btnClose.addEventListener('click', close);
+    btnPrev.addEventListener('click', function (e) { e.stopPropagation(); prev(); });
+    btnNext.addEventListener('click', function (e) { e.stopPropagation(); next(); });
+
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('is-open')) return;
+        if (e.key === 'Escape')     close();
+        if (e.key === 'ArrowLeft')  prev();
+        if (e.key === 'ArrowRight') next();
+    });
+
+    let touchStartX = null;
+    overlay.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    overlay.addEventListener('touchend', function (e) {
+        if (touchStartX === null) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 50) dx < 0 ? next() : prev();
+        touchStartX = null;
+    }, { passive: true });
+})();
