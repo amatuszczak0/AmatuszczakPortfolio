@@ -23,15 +23,15 @@
 
 const SITE_CONFIG = {
     contact: {
-        email:     'work@amatuszczak.com',
-        emailHref: 'mailto:work@amatuszczak.com',
+        email:     'work@amatuszczak.website',
+        emailHref: 'mailto:work@amatuszczak.website',
         phone:     '+48 505 410 450',
         phoneHref: 'tel:+48505410450',
     },
     socials: {
         instagram: {
-            handle: '@a.matuszczak',
-            href:   'https://www.instagram.com/a.matuszczak/',
+            handle: '@antek_matuszczak',
+            href:   'https://www.instagram.com/antek_matuszczak/',
         },
         behance: {
             handle: 'antoni_matuszczak',

@@ -308,9 +308,25 @@ body {
 
 @media (max-width: 768px) {
 
+    .works-hero {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .works-title-wrapper {
-        margin-left: 5vw;
+        display: block;
+        width: 100%;
+        margin-left: 0;
         margin-bottom: 40px;
+        padding-left: 5vw;
+        box-sizing: border-box;
+    }
+
+    .works-tag-wrapper {
+        left: auto;
+        right: -10px;
+        top: 45%;
+        width: 150px;
     }
 
     .works-intro,
@@ -322,7 +338,6 @@ body {
     .works-header-container {
         gap: 40px;
         padding: 40px 5vw;
-        width: 100%;
         box-sizing: border-box;
     }
 
@@ -342,54 +357,42 @@ body {
 
 @media (max-width: 480px) {
 
-    /* Zapobiega poziomemu scrollowi */
-    .works-page {
+    body {
         overflow-x: hidden;
-        width: 100%;
     }
 
     .works-hero {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
-        overflow-x: hidden;
     }
 
-    .works-title-wrapper {
-        padding-left: 5vw;
-        padding-right: 5vw;
-        margin-left: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .works-intro,
-    .works-outro {
-        margin-left: 5vw;
-        max-width: calc(100vw - 10vw);
-        box-sizing: border-box;
-    }
-
-    .works-photo-section {
-        height: 20vh;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
 
     .works-title {
         font-size: clamp(40px, 12vw, 56px);
-        margin-left: 0;
+        margin-bottom: 10vh;
+        margin-left: 10vw;
     }
 
     .works-tag-wrapper {
         display: block;
         width: 100px;
-        left: 50%;
+        left: 35%;
         right: auto;
         top: 50%;
         transform: translate(0, -30%) rotate(1deg);
         overflow: visible;
+    }
+
+    .works-intro,
+    .works-outro {
+        margin-left: 5vw;
+        max-width: calc(100% - 10vw);
+    }
+
+    .works-photo-section {
+        height: 20vh;
+        width: 100%;
     }
 
     .works-header-container {
@@ -401,7 +404,7 @@ body {
 
     :root {
         --grid-item-height: 38vh;
-        --grid-gap:         5px;
+        --grid-gap: 5px;
     }
 
     .works-grid-section {
