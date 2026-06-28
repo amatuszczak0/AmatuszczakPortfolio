@@ -313,7 +313,6 @@ body {
         margin-bottom: 40px;
     }
 
-
     .works-intro,
     .works-outro {
         margin-left: 5vw;
@@ -322,8 +321,9 @@ body {
 
     .works-header-container {
         gap: 40px;
-        padding-left: 5vw;
         padding: 40px 5vw;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     :root {
@@ -342,28 +342,44 @@ body {
 
 @media (max-width: 480px) {
 
+    /* Zapobiega poziomemu scrollowi */
+    .works-page {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .works-hero {
         padding-left: 0;
         padding-right: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
-    /* Przywracamy marginesy tam, gdzie powinny zostać */
-    .works-title-wrapper,
+    .works-title-wrapper {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin-left: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .works-intro,
     .works-outro {
-        padding-left: 10vw; /* Przywrócenie pierwotnego odstępu */
-        padding-right: 10vw;
+        margin-left: 5vw;
+        max-width: calc(100vw - 10vw);
+        box-sizing: border-box;
     }
 
     .works-photo-section {
-        width: 100vw; /* Wymuszenie pełnej szerokości viewportu */
+        height: 20vh;
+        width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
 
     .works-title {
         font-size: clamp(40px, 12vw, 56px);
-        margin-left: 5vw;
+        margin-left: 0;
     }
 
     .works-tag-wrapper {
@@ -376,29 +392,27 @@ body {
         overflow: visible;
     }
 
-    .works-intro,
-    .works-outro {
-        margin-left: 4vw;
-    }
-
-    .works-photo-section {
-        height: 20vh;
+    .works-header-container {
+        gap: 24px;
+        padding: 32px 5vw;
         width: 100%;
+        box-sizing: border-box;
     }
-
 
     :root {
         --grid-item-height: 38vh;
         --grid-gap:         5px;
     }
 
-    .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding-bottom: 50px;
-    }
-
     .works-grid-section {
         padding: 0 5px;
         padding-bottom: 80px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
     }
 }
